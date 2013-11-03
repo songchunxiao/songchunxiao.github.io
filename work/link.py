@@ -10,7 +10,7 @@ import urllib2
 class ScoreUrl(threading.Thread):
     timeLimit = 1800
     addTick = 30
-    threadMaxNum = 50
+    threadMaxNum = 500
     threadPool = [0] * threadMaxNum
     threadNum = 0
     threadCount = 0
@@ -68,6 +68,7 @@ class ScoreUrl(threading.Thread):
     def run(self):
         if (not self.httpExists(self.uri)):
             self.writeStuff(None)
+            ScoreUrl.threadCount -= 1
             return
 
         uriLink = "http://api.riskive.com/v2/link"
