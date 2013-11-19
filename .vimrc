@@ -59,3 +59,7 @@ augroup END
 "
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
+map gc I//
+colorscheme darkblue
+map [5~ dd
+echo "Jie's vIM >^.^<"
