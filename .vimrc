@@ -1,11 +1,17 @@
 syntax on
+cd ~
 set shiftwidth=4
 set expandtab
 set tabstop=4
 set smartindent
 set autoindent
 set number
+""fengjie
 map <F5> : !python %<CR>
+map <space> viw
+
+
+
 
 """""""""""""""" python Begin
 set nocompatible
@@ -59,7 +65,17 @@ augroup END
 "
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
-map gc I//
-colorscheme darkblue
-map [5~ dd
-echo "Jie's vIM >^.^<"
+
+
+"set default folder
+  if has("unix") 
+        cd ~/Programs 
+    elseif has("win32") 
+        if exists("$OS") && ($OS == "Windows_NT") 
+            cd D:\cygwin64\home\joker_000\
+        else 
+            cd "C:/Users/renshaw family/Documents/Programs" 
+        endif 
+    endif 
+
+
