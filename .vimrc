@@ -1,3 +1,5 @@
+let mapleader = ","
+let maplocalleader = "\\"
 syntax on
 cd ~
 set shiftwidth=4
@@ -6,18 +8,57 @@ set tabstop=4
 set smartindent
 set autoindent
 set number
-""fengjie
-map <F5> : !python %<CR>
-map <space> viw
+colorscheme murphy
+iabbrev "- "----------------------------
+"used nnoremap instead of nmap it doesn't matter if you've mapped any of the
+"keys in this sequence to something else. Vim will use the default
+"functionality for all of them.
+"---------------------------- fengjie   
+"noremap <F5> : w | make
+"noremap <F6> : !./a < in
+"---------------------------- select a word
+noremap <localleader><space> viw
+"---------------------------- no further mapping
+nnoremap - dd
+"---------------------------- noremap, nnoremap, vnoremap, inoremap
+"---------------------------- n non recursive map
+inoremap <c-d> <esc>ddi
+inoremap <c-u> <esc>lviwUwi
+nnoremap <c-u> viwUw
+
+"---------------------------- edit .vimrc and source .vimrc
+nnoremap <localleader>ev :split $MYVIMRC<cr>
+nnoremap <localleader>sv :source $MYVIMRC<cr>
+
+
+
+"---------------------------- Email, website, signature
+iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+vnoremap " <esc>`<i"<esc>`>a"<esc>
+nnoremap L $
+nnoremap H 0 
+"---------------------------- disable key :inoremap <esc> <nop>
+"autocmd BufNewFile * :write
+"autocmd BufWritePre,BufRead *.html :normal gg=G
+autocmd BufWritePre,BufRead *.html setlocal nowrap
+autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType python nnoremap <buffer> <localleader>c I#cesc>
+autocmd FileType html nnoremap <buffer> <localleader>c I<!--<esc>A--><esc>
 
 
 
 
-"""""""""""""""" python Begin
+
+
+"""""""""""""""" PYTHON Begin
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim
+set rtp+=~/.vim/after
+
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -39,6 +80,7 @@ set laststatus=2
 " Pathogen load
 filetype off
 
+set nocp
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -63,13 +105,13 @@ augroup END
 
 
 "
-nmap <F9> :SCCompile<cr>
-nmap <F10> :SCCompileRun<cr>
+nnoremap <F9> :SCCompile<cr>
+nnoremap <F10> :SCCompileRun<cr>
 
 
 "set default folder
   if has("unix") 
-        cd ~/Programs 
+        cd ~
     elseif has("win32") 
         if exists("$OS") && ($OS == "Windows_NT") 
             cd D:\cygwin64\home\joker_000\
