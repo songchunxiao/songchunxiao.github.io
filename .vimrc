@@ -2,7 +2,6 @@ let mapleader = ","
 let maplocalleader = "\\"
 syntax on
 
-
 "---------------------------- omnicompletion BEGIN
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
