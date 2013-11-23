@@ -1,13 +1,35 @@
 let mapleader = ","
 let maplocalleader = "\\"
 syntax on
-cd ~
+
+
+"---------------------------- omnicompletion BEGIN
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+"---------------------------- omnicompletion END
+
 set shiftwidth=4
 set expandtab
 set tabstop=4
 set smartindent
 set autoindent
 set number
+"set statusline=%F          fullpath
+
+
+"set statusline=%.20F       change the maximum width
+set statusline=%f         " Path to the file
+set statusline+=\ -\      " Separator
+set statusline+=FileType: " Label
+set statusline+=%y        " Filetype of the file
+
+set statusline+=%4l   " Current line
+
+"set statusline=%04l
+"set statusline=%-4l
+set statusline+=/    " Separator
+set statusline+=%L   " Total lines
+
 colorscheme murphy
 iabbrev "- "----------------------------
 "used nnoremap instead of nmap it doesn't matter if you've mapped any of the
@@ -22,7 +44,7 @@ noremap <localleader><space> viw
 nnoremap - dd
 "---------------------------- noremap, nnoremap, vnoremap, inoremap
 "---------------------------- n non recursive map
-inoremap <c-d> <esc>ddi
+"inoremap <c-d> <esc>ddi
 inoremap <c-u> <esc>lviwUwi
 nnoremap <c-u> viwUw
 
@@ -34,17 +56,58 @@ nnoremap <localleader>sv :source $MYVIMRC<cr>
 
 "---------------------------- Email, website, signature
 iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
+
+
+
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 vnoremap " <esc>`<i"<esc>`>a"<esc>
 nnoremap L $
 nnoremap H 0 
+onoremap b /return<cr>
+"---------------------------- Operator-Pending Mappings (operators and movements)
+
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+augroup text
+    autocmd!
+    autocmd FileType text onoremap <buffer> ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+    autocmd FileType text onoremap <buffer> ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+augroup END
+
+
 "---------------------------- disable key :inoremap <esc> <nop>
 "autocmd BufNewFile * :write
 "autocmd BufWritePre,BufRead *.html :normal gg=G
-autocmd BufWritePre,BufRead *.html setlocal nowrap
-autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
-autocmd FileType python nnoremap <buffer> <localleader>c I#cesc>
-autocmd FileType html nnoremap <buffer> <localleader>c I<!--<esc>A--><esc>
+"autocmd BufWritePost .vimrc :source ~/.vimrc
+
+augroup testgroup
+    autocmd!
+    autocmd BufWrite * :echom "Baz"
+augroup END
+
+
+augroup filetype_javascript
+    autocmd!
+    autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+    autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
+augroup END
+
+augroup filetype_python
+    autocmd!
+    autocmd FileType python set statusline=%f-%y-[%l]/[%L]
+    autocmd FileType python nnoremap <buffer> <localleader>c I#cesc>
+    autocmd FileType python :iabbrev <buffer> iff if:<left>
+augroup END
+
+augroup filetype_html
+    autocmd!
+    autocmd BufWritePre,BufRead *.html setlocal nowrap
+    autocmd FileType html nnoremap <buffer> <localleader>c I<!--<esc>A--><esc>
+    autocmd FileType html iabbrev <buffer> --- &mdash;
+    autocmd FileType html iabbrev <buffer> `` &ldquo;
+    autocmd FileType html iabbrev <buffer> '' &rdquo;
+    autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
+augroup END
 
 
 
