@@ -1,3 +1,7 @@
+#!/usr/bin/python
 import urllib2
-content = urllib2.urlopen(some_url).read()
+import sys
+args = sys.argv
+url = args[1]
+content = urllib2.urlopen(url).read()
 print content
