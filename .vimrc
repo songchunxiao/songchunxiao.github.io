@@ -183,7 +183,7 @@ nnoremap <F10> :SCCompileRun<cr>
         if exists("$OS") && ($OS == "Windows_NT") 
             cd D:\cygwin64\home\joker_000\
         else 
-            cd "C:/Users/renshaw family/Documents/Programs" 
+            cd "~" 
         endif 
     endif 
 
