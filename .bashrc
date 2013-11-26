@@ -141,3 +141,4 @@ ensiteIt(){
 }
 
 alias ensite=ensiteIt
+shopt -s dotglob
