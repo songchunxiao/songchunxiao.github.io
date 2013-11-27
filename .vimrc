@@ -8,61 +8,77 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 "---------------------------- omnicompletion END
 
+set foldlevel=0
+
+"editing set
+"---------------------------- {{{
 set shiftwidth=4
 set expandtab
 set tabstop=4
 set smartindent
 set autoindent
 set number
+"}}}
+
+colorscheme murphy
+
+"statusline
+"---------------------------- {{{
 "set statusline=%F          fullpath
-
-
 "set statusline=%.20F       change the maximum width
 set statusline=%f         " Path to the file
 set statusline+=\ -\      " Separator
 set statusline+=FileType: " Label
 set statusline+=%y        " Filetype of the file
-
 set statusline+=%4l   " Current line
-
 "set statusline=%04l
 "set statusline=%-4l
 set statusline+=/    " Separator
 set statusline+=%L   " Total lines
+"}}}
 
-colorscheme murphy
+"abbreviations
+"---------------------------- {{{
 iabbrev "- "----------------------------
-"used nnoremap instead of nmap it doesn't matter if you've mapped any of the
-"keys in this sequence to something else. Vim will use the default
-"functionality for all of them.
-"---------------------------- fengjie   
+"---------------------------- Email, website, signature
+iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
+"}}}
+
+"excuting
+"---------------------------- {{{
 "noremap <F5> : w | make
 "noremap <F6> : !./a < in
+"}}}
+
+"normal mode
+"---------------------------- {{{
 "---------------------------- select a word
 noremap <localleader><space> viw
 "---------------------------- no further mapping
 nnoremap - dd
-"---------------------------- noremap, nnoremap, vnoremap, inoremap
-"---------------------------- n non recursive map
-"inoremap <c-d> <esc>ddi
-inoremap <c-u> <esc>lviwUwi
-nnoremap <c-u> viwUw
-
-"---------------------------- edit .vimrc and source .vimrc
 nnoremap <localleader>ev :split $MYVIMRC<cr>
 nnoremap <localleader>sv :source $MYVIMRC<cr>
-
-
-
-"---------------------------- Email, website, signature
-iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
-
-
-
+nnoremap <c-u> viwUw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-vnoremap " <esc>`<i"<esc>`>a"<esc>
 nnoremap L $
 nnoremap H 0 
+"}}}
+
+"---------------------------- noremap, nnoremap, vnoremap, inoremap
+"---------------------------- n non recursive map
+"insert mode mappings
+"---------------------------- {{{
+"inoremap <c-d> <esc>ddi
+inoremap <c-u> <esc>lviwUwi
+"}}}
+
+"visual mode mappings
+"---------------------------- {{{
+vnoremap " <esc>`<i"<esc>`>a"<esc>
+"}}}
+
+"operator-pending mappings
+"---------------------------- {{{
 onoremap b /return<cr>
 "---------------------------- Operator-Pending Mappings (operators and movements)
 
@@ -70,19 +86,27 @@ onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap ie :<c-u>execute "normal! 
     \/[a-zA-Z0-9._]\\+@[a-zA-Z0-9._]\\+\\.[a-zA-Z]\\{2,3}\rv/@\rE"<cr>
+"}}}
 
 
-augroup text
-    autocmd!
-    autocmd FileType text onoremap <buffer> ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
-    autocmd FileType text onoremap <buffer> ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
-augroup END
 
 
 "---------------------------- disable key :inoremap <esc> <nop>
 "autocmd BufNewFile * :write
 "autocmd BufWritePre,BufRead *.html :normal gg=G
 "autocmd BufWritePost .vimrc :source ~/.vimrc
+"FileType specific settings
+"---------------------------- {{{
+augroup text
+    autocmd!
+    autocmd FileType text onoremap <buffer> ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+    autocmd FileType text onoremap <buffer> ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+augroup END
+
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 
 augroup testgroup
     autocmd!
@@ -112,6 +136,7 @@ augroup filetype_html
     autocmd FileType html iabbrev <buffer> '' &rdquo;
     autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
 augroup END
+"}}}
 
 
 
