@@ -1,5 +1,4 @@
 "Created by Jie Feng, feel free to use
-"
 let mapleader = ","
 let maplocalleader = "\\"
 syntax on
@@ -9,19 +8,33 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 "---------------------------- omnicompletion END
 
-set foldlevel=0
 
+"highlight errors 
+"---------------------------- {{{
+nnoremap <leader>w :match Error /\v +$/<cr>
+nnoremap <leader>W :match none<cr>
+"}}}
 "editing set
 "---------------------------- {{{
+set foldlevel=0
 set shiftwidth=4
 set expandtab
 set tabstop=4
 set smartindent
 set autoindent
 set number
+set hlsearch incsearch
 "}}}
 
 colorscheme murphy
+nnoremap / /\v
+nnoremap <leader>/ :nohlsearch<cr>
+"edit .vimrc and plugins
+"---------------------------- {{{
+nnoremap <localleader>ev :tabedit $MYVIMRC<cr>
+nnoremap <localleader>sv :source $MYVIMRC<cr>
+nnoremap <localleader>s% :source %<cr>
+"}}}
 
 "statusline
 "---------------------------- {{{
@@ -51,15 +64,13 @@ iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
 "noremap <F6> : !./a < in
 "}}}
 
-"normal mode
+"normal mode mappings
 "---------------------------- {{{
 "---------------------------- select a word
 noremap <localleader><space> viw
 "---------------------------- no further mapping
 nnoremap - dd
-nnoremap <localleader>ev :split $MYVIMRC<cr>
-nnoremap <localleader>sv :source $MYVIMRC<cr>
-nnoremap <c-u> viwUw
+"nnoremap <c-u> viwUw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap L $
 nnoremap H 0 
@@ -88,8 +99,17 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap ie :<c-u>execute "normal! 
     \/[a-zA-Z0-9._]\\+@[a-zA-Z0-9._]\\+\\.[a-zA-Z]\\{2,3}\rv/@\rE"<cr>
 "}}}
+"open window-buffer mappings
+" ---------------------------- {{{
+nnoremap <localleader>pb :execute "rightbelow vsplit  " . bufname("#")  <cr>
+"}}}
+"grep
+"---------------------------- {{{
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprevious<cr>
+"}}}
 
-
+" fengjie
 
 
 "---------------------------- disable key :inoremap <esc> <nop>
@@ -212,5 +232,3 @@ nnoremap <F10> :SCCompileRun<cr>
             cd "~" 
         endif 
     endif 
-
-
