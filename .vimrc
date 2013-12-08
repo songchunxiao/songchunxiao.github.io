@@ -26,7 +26,8 @@ set number
 set hlsearch incsearch
 "}}}
 
-colorscheme murphy
+"colorscheme murphy
+
 nnoremap / /\v
 nnoremap <leader>/ :nohlsearch<cr>
 "edit .vimrc and plugins

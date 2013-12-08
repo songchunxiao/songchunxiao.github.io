@@ -19,6 +19,7 @@ HISTCONTROL=irgnoredups:erasedups
 HISTTIMEFORMAT="%F-%M-%S --> "
 HISTIGNORE="cd *":"ls *":"mkdir *"
 
+export PATH=~/PhpStorm/bin/:$PATH
  
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
