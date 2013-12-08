@@ -1,3 +1,3 @@
 #!/bin/bash
-git commit -m "fengjie"
+git commit -m "fengjie" -a
 ./push.sh
