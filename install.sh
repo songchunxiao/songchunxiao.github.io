@@ -11,5 +11,5 @@ git config --global user.email "jokerfeng2010@gmail.com"
 git config --global user.name "Jie Feng"
 
 #Install softwares
-sudo apt-get install ccrypt vim vim-gnome git expect
+sudo apt-get install ccrypt vim vim-gnome git expect texlive-full
 
