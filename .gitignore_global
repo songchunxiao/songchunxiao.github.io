@@ -1,0 +1,23 @@
+.ICEauthority
+.Xauthority
+.bash_logout
+.cache/
+.config/
+.dmrc
+.gconf/
+.gitconfig
+.gnupg/
+.local/
+.mozilla/
+.pki/
+.profile
+.viminfo
+.xinputrc
+.xsession-errors
+Desktop/
+Downloads/
+Jie/
+Ubuntu One/
+examples.desktop
+programming/
+script/
