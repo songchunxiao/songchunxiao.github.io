@@ -131,7 +131,7 @@ umask 022
 # alias l='ls $LS_OPTIONS -lA'
 #
 # Some more alias to avoid making mistakes:
-alias rm='rm -i'
+alias rm='rm -rf'
 alias cp='cp -i'
 alias mv='mv -i'
 ensiteIt(){
