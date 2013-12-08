@@ -30,6 +30,7 @@ set hlsearch incsearch
 
 nnoremap / /\v
 nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <localleader>h :set hlsearch!<cr>
 "edit .vimrc and plugins
 "---------------------------- {{{
 nnoremap <localleader>ev :tabedit $MYVIMRC<cr>
