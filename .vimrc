@@ -33,7 +33,7 @@ nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <localleader>h :set hlsearch!<cr>
 "edit .vimrc and plugins
 "---------------------------- {{{
-nnoremap <localleader>ev :tabedit $MYVIMRC<cr>
+nmap <localleader>ev :tabedit $MYVIMRC<cr>'tzo
 nnoremap <localleader>sv :source $MYVIMRC<cr>
 nnoremap <localleader>s% :source %<cr>
 "}}}
@@ -60,11 +60,6 @@ iabbrev "- "----------------------------
 iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
 "}}}
 
-"excuting
-"---------------------------- {{{
-"noremap <F5> : w | make
-"noremap <F6> : !./a < in
-"}}}
 
 "normal mode mappings
 "---------------------------- {{{
@@ -159,7 +154,18 @@ augroup filetype_html
     autocmd FileType html iabbrev <buffer> '' &rdquo;
     autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
 augroup END
+
+augroup filetype_tex
+    autocmd!
+    "autocmd FileType tex set spell
+    autocmd FileType tex set textwidth=80
+    autocmd FileType tex nnoremap <F5> :!latex % <cr>
+    autocmd FileType tex nnoremap <F6> :execute "!evince " . expand('%:r').".dvi" <cr>
+    autocmd FileType tex nnoremap <F7> :execute "!latex % && evince " . expand('%:r') . ".dvi" <cr>
+    autocmd FileType tex nnoremap <F8> g<c-g>
+augroup END
 "}}}
+
 
 
 
@@ -226,7 +232,6 @@ nnoremap <F10> :SCCompileRun<cr>
 
 "set default folder
   if has("unix") 
-        cd ~
     elseif has("win32") 
         if exists("$OS") && ($OS == "Windows_NT") 
             cd D:\cygwin64\home\joker_000\
