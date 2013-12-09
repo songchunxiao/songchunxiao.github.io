@@ -19,8 +19,10 @@ sudo pip install urllib2
 sudo apt-get install vim vim-gnome tomboy \
     git expect gparted \
     artha dict goldendict goldendict-wordnet \
-    vlc-nox apt-file\
-    texlive-full
+    vlc-nox apt-file
+
+#Tex/Latex installing
+sudo apt-get install texlive-full evince
 
 #Developing
 sudo apt-get install cmake bzr build-dep unity nux gnome-common libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0
