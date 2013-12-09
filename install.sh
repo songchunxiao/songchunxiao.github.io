@@ -16,15 +16,15 @@ sudo apt-get install python-pip
 sudo pip install urllib2
 
 #Install softwares
-sudo apt-get install vim vim-gnome git expect tomboy gparted \
+sudo apt-get install vim vim-gnome tomboy \
+    git expect gparted \
     artha dict goldendict goldendict-wordnet \
-    vlc-nox\
+    vlc-nox apt-file\
     texlive-full
 
-
-
+#Developing
+sudo apt-get install cmake bzr build-dep unity nux gnome-common libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0
 #Lamp
 sudo apt-get install tasksel 
 sudo tasksel install lamp-server
 sudo apt-get install php5-cgi
-
