@@ -143,3 +143,5 @@ ensiteIt(){
 
 alias ensite=ensiteIt
 shopt -s dotglob
+alias watchMemory='watch "ps aux | sort -nrk 4 | head -n 40"'
+alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'

@@ -46,7 +46,7 @@ set statusline=%f         " Path to the file
 set statusline+=\ -\      " Separator
 set statusline+=FileType: " Label
 set statusline+=%y        " Filetype of the file
-set statusline+=%4l   " Current line
+set statusline+=(%2v)%4l   " Current line
 "set statusline=%04l
 "set statusline=%-4l
 set statusline+=/    " Separator
@@ -157,8 +157,8 @@ augroup END
 
 augroup filetype_tex
     autocmd!
-    "autocmd FileType tex set spell
-    autocmd FileType tex set textwidth=80
+    autocmd FileType tex set spell
+    autocmd FileType tex set textwidth=120
     autocmd FileType tex nnoremap <F5> :!latex % <cr>
     autocmd FileType tex nnoremap <F6> :execute "!evince " . expand('%:r').".dvi" <cr>
     autocmd FileType tex nnoremap <F7> :execute "!latex % && evince " . expand('%:r') . ".dvi" <cr>
