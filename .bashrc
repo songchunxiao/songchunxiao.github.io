@@ -19,7 +19,7 @@ HISTCONTROL=irgnoredups:erasedups
 HISTTIMEFORMAT="%F-%M-%S --> "
 HISTIGNORE="cd *":"ls *":"mkdir *"
 
-export PATH=~/PhpStorm/bin/:$PATH
+export PATH=~/PhpStorm/bin/:~/potion/bin:~/bin:$PATH
  
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -140,8 +140,12 @@ ensiteIt(){
 	a2ensite $1; 
 	service apache2 reload
 }
-
+logoutUser(){
+    sudo pkill -u $1
+}
 alias ensite=ensiteIt
 shopt -s dotglob
 alias watchMemory='watch "ps aux | sort -nrk 4 | head -n 40"'
 alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'
+alias replaceUnity='DISPLAY=:0 unity --replace'
+alias logOut="logoutUser john"

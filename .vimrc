@@ -67,6 +67,7 @@ iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
 noremap <localleader><space> viw
 "---------------------------- no further mapping
 nnoremap - dd
+noremap <localleader>do ggVG:!tr '\n' ' '<cr><esc>"+yy
 "nnoremap <c-u> viwUw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap L $
