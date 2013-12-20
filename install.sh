@@ -19,6 +19,7 @@ sudo apt-get install vim vim-gnome tomboy \
     git expect gparted \
     artha dict goldendict goldendict-wordnet \
     vlc-nox gimp\
+    figlet\
     apt-file \
     iftop bmon
 

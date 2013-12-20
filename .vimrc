@@ -84,7 +84,7 @@ inoremap <c-u> <esc>lviwUwi
 
 "visual mode mappings
 "---------------------------- {{{
-vnoremap " <esc>`<i"<esc>`>a"<esc>
+"vnoremap " <esc>`<i"<esc>`>a"<esc>
 "}}}
 
 "operator-pending mappings
