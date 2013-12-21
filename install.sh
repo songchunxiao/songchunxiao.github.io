@@ -8,6 +8,8 @@ chmod a+x ~/generated/push.sh
 
 #PPA
 sudo apt-add-repository ppa:thefanclub/grive-tools
+sudo add-apt-repository ppa:atareao/atareao #google calendar
+
 sudo apt-get update
 
 #Python setup
@@ -18,10 +20,11 @@ sudo pip install urllib2
 sudo apt-get install vim vim-gnome tomboy \
     git expect gparted \
     artha dict goldendict goldendict-wordnet \
-    vlc-nox gimp\
+    vlc-nox gimp apcalc\
     figlet\
     apt-file \
-    iftop bmon
+    iftop bmon\
+    calendar-indicator\
 
 #Tex/Latex installing
 sudo apt-get install texlive-full evince

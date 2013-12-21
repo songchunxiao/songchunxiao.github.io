@@ -1,0 +1,4 @@
+#TopCoder ContestApplet Preferences File
+#Sat Dec 21 13:18:32 EST 2013
+com.topcoder.client.contestApplet.common.LocalPreferences.menufont=Arial
+com.topcoder.client.contestApplet.common.LocalPreferences.menufontsize=10
