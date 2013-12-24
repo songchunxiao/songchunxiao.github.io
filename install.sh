@@ -17,7 +17,7 @@ sudo apt-get install python-pip
 sudo pip install urllib2
 
 #Install softwares
-sudo apt-get install vim vim-gnome tomboy \
+sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     git expect gparted \
     artha dict goldendict goldendict-wordnet \
     vlc-nox gimp apcalc\
@@ -34,7 +34,7 @@ sudo apt-get install -y grive-tools
 
 #Developing
 sudo apt-get install cmake clang bzr build-dep unity nux gnome-common \
-    libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0
+    libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0 libclang1-3.4 clang-3.4
 #Lamp
 sudo apt-get install tasksel 
 sudo tasksel install lamp-server

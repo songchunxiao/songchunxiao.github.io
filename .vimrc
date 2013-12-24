@@ -7,8 +7,9 @@ syntax on
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 "---------------------------- omnicompletion END
-
-
+"shortcuts for searching patterns
+noremap ;; :%s:::g<Left><Left><Left>
+noremap ;' :%s:::cg<Left><Left><Left><Left>
 "highlight errors 
 "---------------------------- {{{
 nnoremap <leader>w :match Error /\v +$/<cr>
@@ -26,7 +27,7 @@ set number
 set hlsearch incsearch
 "}}}
 
-"colorscheme murphy
+colorscheme peachpuff
 
 nnoremap / /\v
 nnoremap <leader>/ :nohlsearch<cr>
@@ -132,6 +133,13 @@ augroup testgroup
     autocmd BufWrite * :echom "Baz"
 augroup END
 
+augroup filetype_c_cpp
+    autocmd!
+	autocmd FileType *
+				\	if ( &filetype == 'cpp' || &filetype == 'c') |
+				\	    set nowrap |
+				\	endif
+augroup END
 
 augroup filetype_javascript
     autocmd!
@@ -167,53 +175,14 @@ augroup filetype_tex
 augroup END
 "}}}
 
-
-
-
-
-
-
-"""""""""""""""" PYTHON Begin
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim
-set rtp+=~/.vim/after
-
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" The bundles you install will be listed here
-
-filetype plugin indent on
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-" Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+"pathogen load"{{{
 set laststatus=2
-
-" The rest of your config follows here
-"""""""""""""""" python End
-
-" Pathogen load
-filetype off
-
 set nocp
-call pathogen#infect()
-call pathogen#helptags()
-
-filetype plugin indent on
-syntax on
-
-"pathogen.vim"""""""""""""""""""""""""""""""""""""""""""""""BEGIN
 execute pathogen#infect()
+execute pathogen#helptags()
 syntax on
 filetype plugin indent on
-"pathogen.vim"""""""""""""""""""""""""""""""""""""""""""""""END
+"}}}
 
 
 " Hilight excess line length in python
@@ -224,7 +193,6 @@ augroup vimrc_autocmds
     autocmd FileType python match Excess /\%80v.*/
     autocmd FileType python set nowrap
 augroup END
-
 
 "
 nnoremap <F9> :SCCompile<cr>
@@ -240,3 +208,40 @@ nnoremap <F10> :SCCompileRun<cr>
             cd "~" 
         endif 
     endif 
+" For clang_complete{{{
+let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
+let g:clang_library_file = "libclang.so.1"
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
+let g:clang_complete_auto = 1
+
+" Clang Complete Settings
+let g:clang_use_library=1
+let g:clang_debug = 1
+" if there's an error, allow us to see it
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_complete_patterns=0
+" Limit memory use
+let g:clang_memory_percent=70
+" Remove -std=c++11 if you don't use C++ for everything like I do.
+let g:clang_user_options=' -std=c++11 || exit 0'
+" Set this to 0 if you don't want autoselect, 1 if you want autohighlight,
+" and 2 if you want autoselect. 0 will make you arrow down to select the first
+" option, 1 will select the first option for you, but won't insert it unless you
+" press enter. 2 will automatically insert what it thinks is right. 1 is the most
+" convenient IMO, and it defaults to 0.
+let g:clang_auto_select=1
+
+set conceallevel=2
+set concealcursor=vin
+let g:clang_snippets=1
+let g:clang_conceal_snippets=1
+" The single one that works with clang_complete
+let g:clang_snippets_engine='clang_complete'
+"""}}}
+" For bash-support{{{
+let g:BASH_AuthorName   = 'Jie Feng'
+let g:BASH_Email        = 'jokerfeng2010@gmail.com'
+let g:BASH_Company      = 'The Johns Hopkins'
+"}}}
