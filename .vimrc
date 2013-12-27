@@ -1,8 +1,36 @@
-"Created by Jie Feng, feel free to use
+"Jie's vimrc file, feel free to use
+colorscheme peachpuff
 let mapleader = ","
 let maplocalleader = "\\"
 syntax on
 
+
+
+"---------handy shortcuts--------------------{{{
+function! MouseAction(state)
+    execute "!xinput set-prop 14 'Device Enabled' " . a:state 
+endfunction
+
+nnoremap / /\v
+nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <localleader>h :set hlsearch!<cr>
+nnoremap <localleader>s :sh<cr>
+
+nnoremap <C-Right> gt
+nnoremap <C-Left> gT
+inoremap <C-Right> <esc>gt
+inoremap <C-Left> <esc>gT
+
+nnoremap <C-A> <esc>ggyG
+vnoremap <C-C> "+yy
+inoremap <C-V> <esc>"+pa
+nnoremap <C-V> "+p
+"open touch pad
+nnoremap <C-A-M> :call MouseAction(0)<cr><cr>
+nnoremap <C-M> :call MouseAction(1)<cr><cr>
+inoremap <C-A-M> <esc>:call MouseAction(0)<cr><cr>a
+inoremap <C-M> <esc>:call MouseAction(1)<cr><cr>a
+"}}}
 "---------------------------- omnicompletion BEGIN
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -27,11 +55,6 @@ set number
 set hlsearch incsearch
 "}}}
 
-colorscheme peachpuff
-
-nnoremap / /\v
-nnoremap <leader>/ :nohlsearch<cr>
-nnoremap <localleader>h :set hlsearch!<cr>
 "edit .vimrc and plugins
 "---------------------------- {{{
 nmap <localleader>ev :tabedit $MYVIMRC<cr>'tzo
@@ -57,8 +80,8 @@ set statusline+=%L   " Total lines
 "abbreviations
 "---------------------------- {{{
 iabbrev "- "----------------------------
-"---------------------------- Email, website, signature
 iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
+iabbrev ednl endl
 "}}}
 
 
@@ -67,12 +90,9 @@ iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
 "---------------------------- select a word
 noremap <localleader><space> viw
 "---------------------------- no further mapping
-nnoremap - dd
 noremap <localleader>do ggVG:!tr '\n' ' '<cr><esc>"+yy
 "nnoremap <c-u> viwUw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap L $
-nnoremap H 0 
 "}}}
 
 "---------------------------- noremap, nnoremap, vnoremap, inoremap

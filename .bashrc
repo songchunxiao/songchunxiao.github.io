@@ -147,3 +147,8 @@ alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'
 alias replaceUnity='DISPLAY=:0 unity --replace'
 alias logOut="logoutUser john"
 alias open="gnome-open"
+alias openMouse="xinput set-prop 14 'Device Enabled' 1"
+alias closeMouse="xinput set-prop 14 'Device Enabled' 0"
+alias vimall="gvim -p *.h *.cc makefile"
+alias sourcenow="source ~/.bashrc"
+alias bashe="vim ~/.bashrc"
