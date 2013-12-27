@@ -1,149 +1,187 @@
-#include "../euler.h"
-typedef unsigned char BigUnit;
+#include "BigIntBase.h"
 
-/*
- * 1.Due to the following reasons, I created BigIntBase as the array type for BigInteger:
- *   A.vector has so many problems when used as class member, ex,
- *     when you use push_back(), When you call std::vector::push_back(), a copy 
- *     of the argument is made before adding it to the vector. 
- *   B.The expansion speed for BigInteger's array is very different from the default
- *     expansion speed of STL::vector, I need to control the expansion.
- *   C.The type for BigUnit is still changing, if I use bit instead of "usnsigned char",
- *     the implementation mechanism may very different, which is difficult to employ
- *     the funcionality of STL::vector.
- * 2.Representation of ingeter:
- *   A. If size==0, the value is 0.
- *   B. If size>0, the value is one positive integer.
- */
-
-class BigIntBase{
-private:
-    const static ui defaultCapacity = 100;
-    BigIntBase(bool forCapacity, ui _capacity){
-        setCapacity(_capacity);
-    }
-    void setCapacity(ui length){
-        if (length < defaultCapacity)
-            data = new BigUnit[capacity=defaultCapacity];
-        else 
-            data = new BigUnit[capacity=length];
-    }
-public:
-    ui size;
-    ui capacity;
-    BigUnit* data = NULL;
-protected:
-public:
-    BigIntBase(): size(0){
-        setCapacity();
-    }
-	BigIntBase(ui n){
-        setCapacity();
-        if (n == 0){
-            data[0] = 0;
-            size = 1;
-        }else{
-            size = 0;
-            while(n != 0){
-                data[size++] = n % 10;
-                n /= 10;
-            }
+BigIntBase::BigIntBase(bool forCapacity, ui _capacity){
+    setCapacity(_capacity);
+}
+BigIntBase::BigIntBase(): size(0){
+    setCapacity();
+}
+BigIntBase::BigIntBase(ui n){
+    setCapacity();
+    if (n == 0){
+        data[0] = 0;
+        size = 1;
+    }else{
+        size = 0;
+        while(n != 0){
+            data[size++] = n % 10;
+            n /= 10;
         }
     }
-    /* 
-     * The input char array can only contain "0-9", for example, 
-     * (1) "987643"
-     * (3) "00987643"
-     * otherwise the result is not defined.
-     */
-    BigIntBase(char* numStr){
-        size = strlen(numStr);
-        setCapacity(size*2);
-        for (ui i = 0; i < size; i++){
-            data[i] = numStr[size-1-i] - '0';
-        }
+}
+BigIntBase::BigIntBase(const char* numStr){
+    size = strlen(numStr);
+    setCapacity(size*2);
+    for (ui i = 0; i < size; i++){
+        data[i] = numStr[size-1-i] - '0';
     }
-    BigIntBase(const BigIntBase& rhs){
-        //cout << "Operator copy has been called" << endl;
-        assign(*this, rhs);
-    }
-    void setCapacity(){
+}
+BigIntBase::BigIntBase(const BigIntBase& rhs){
+    //cout << "Operator copy has been called" << endl;
+    assign(*this, rhs);
+}
+void BigIntBase::setCapacity(){
+    data = new BigUnit[capacity=defaultCapacity];
+}
+void BigIntBase::setCapacity(ui _capacity){
+    if (_capacity < defaultCapacity)
         data = new BigUnit[capacity=defaultCapacity];
+    else 
+        data = new BigUnit[capacity=_capacity];
+}
+void BigIntBase::expand(int newCapacity){
+    cout << "expand here" << endl;
+    BigUnit* newData = new BigUnit[newCapacity];
+    BigUnit* temp = data;
+    memcpy(newData, data, sizeof(BigUnit)*capacity);
+    data = newData;
+    capacity = newCapacity;
+    free(temp);
+}
+void BigIntBase::assign(BigIntBase& lhs, const BigIntBase& rhs){
+    lhs.size = rhs.size;
+    lhs.setCapacity(rhs.capacity);
+    memcpy(lhs.data, rhs.data, sizeof(BigUnit) * lhs.capacity);
+}
+/*
+ * If the requested idx >= capacity, it will expand the capacity twice.
+ * The benefit is that the other part of the program does not need to consider expansion  issue.
+ * Thus, this little trick can largely reduce the programming complexity. 
+ * Also, in this way, the program is easier to read and to maintain.
+ */
+BigUnit& BigIntBase::operator[](const ui idx) {
+    if (idx >= capacity) expand(capacity << 1);
+    return data[idx];
+}
+void BigIntBase::add(BigIntBase &a, BigIntBase &b){
+    assert(a.size >= b.size);
+    if (a.size == 0){
+        operator = (b);
+        return;
+    } else if (b.size == 0) {
+        operator = (a);
+        return;
     }
-    void expand(int newCapacity){
-        BigUnit* newData = new BigUnit[newCapacity];
-        BigUnit* temp = data;
-        memcpy(newData, data, sizeof(BigUnit)*capacity);
-        data = newData;
-        capacity = newCapacity;
-        free(temp);
+    BigIntBase& c = *this;
+    ui i;
+    bool carry = 0;
+    BigUnit t;
+    for (i = 0; i < b.size; i++){
+        t = a[i] + b[i] + carry;
+        if (t >= 10) carry = 1, t = t - 10;
+        else carry = 0;
+        c[i] = t;
     }
-    void assign(BigIntBase& lhs, const BigIntBase& rhs){
-        lhs.size = rhs.size;
-        lhs.setCapacity(rhs.capacity);
-        memcpy(lhs.data, rhs.data, sizeof(BigUnit) * lhs.capacity);
+    for (; i < a.size && carry; i++){
+        t = a[i] + 1;
+        if (t == 10) carry = 1, t = 0;
+        else carry = 0;
+        c[i] = t;
     }
-    BigUnit& operator[](const ui idx) const{
-        assert(idx < capacity);
-        return data[idx];
-    }
-    void add(const BigIntBase &a, const BigIntBase &b){
-        assert(a.size >= b.size);
-        BigIntBase& c = *this;
-        if (a.size == 0){
-            operator = (b);
-            return;
-        } else if (b.size == 0) {
-            operator = (a);
-            return;
+    for (; i < a.size; i++)
+        c[i] = a[i];
+    if (carry){
+        c[i] = 1;
+        size = a.size + 1;
+    }else size = a.size;
+}
+int BigIntBase::compare(BigIntBase &b) {
+    BigIntBase& a = *this;
+    if (a.size != b.size) return a.size - b.size;
+    else{
+        for (int i = a.size - 1; i >= 0; i--){
+            if (a[i] == b[i]) continue;
+            else return a[i] - b[i];
         }
-        ui i;
-        bool carry;
-        BigUnit t;
-        for (i = 0, carry = 0; i < b.size; i++){
-            t = a[i] + b[i] + carry;
-            if (t >= 10) carry = 1, t = t - 10;
-            else carry = 0;
-            c[i] = t;
-        }
-        for (; i < a.size && carry; i++){
-            t = a[i] + 1;
-            if (t == 10) carry = 1, t = 0;
-            else carry = 0;
-            c[i] = t;
-        }
-        for (; i < a.size; i++)
-            c[i] = a[i];
-        if (carry){
-            c[i] = 1;
-            size = a.size + 1;
-        }else size = a.size;
+        return 0;
     }
-    BigIntBase& operator=(const BigIntBase& rhs) {
-        assign(*this, rhs);
-        return *this;
+}
+void BigIntBase::subtract(BigIntBase &a, BigIntBase &b){
+    if (b.size == 0){
+        operator = (a);
+        return;
     }
-    BigIntBase operator+(const BigIntBase& b) const{
-        BigIntBase ret(true, max(b.capacity, this->capacity)+1);
-        if (this->size > b.size)
-            ret.add(*this, b);
-        else 
-            ret.add(b, *this);
-        return ret;
-    }
-    string toStringInBase(ui base){
-        if (base == 10){
-            string s(size, ' ');
-            for (ui i = 0; i < size; i++)
-                s[i] = (*this)[size-1-i]+'0';
-            return s;
+    BigIntBase& c = *this;
+    ui i;
+    bool carry = 0;
+    BigUnit t;
+    for (i = 0; i < b.size; i++){
+        t = carry + b[i];
+        if (a[i] < t){
+            c[i] = 10 + a[i] - t;
+            carry = 1;
         }else{
-            cout << "base " << base << " hasn't been implemented";
-            return NULL;
+            c[i] = a[i] - t;
+            carry = 0;
         }
     }
-};
-ostream& operator <<(ostream &os, BigIntBase& n) {
+    for (; i < a.size && carry; i++)
+        if (a[i] == 0) c[i] = 9;
+        else c[i] = a[i]-1, carry = 0;
+    for (; i < a.size; i++)
+        c[i] = a[i];
+
+    size = a.size-1;
+    while( c[size] == 0 && size >= 0) size--;
+    size++;
+}
+void BigIntBase::multiply(BigIntBase &a, BigIntBase &b){
+    if (a.size == 0)
+        this->size = 0;
+    else if (a.size == 1 && a[0] == 1){
+        operator = (b);
+        return;
+    } else if (b.size == 1 && b[0] == 1) {
+        operator = (a);
+        return;
+    }
+    BigIntBase& c = *this;
+    ui i;
+    bool carry = 0;
+    BigUnit t;
+
+}
+BigIntBase& BigIntBase::operator=(const BigIntBase& rhs) {
+    assign(*this, rhs);
+    return *this;
+}
+BigIntBase BigIntBase::operator+(BigIntBase& b) {
+    BigIntBase ret(true, max(b.capacity, this->capacity)+2);
+    if (this->size > b.size)
+        ret.add(*this, b);
+    else 
+        ret.add(b, *this);
+    return ret;
+}
+BigIntBase BigIntBase::operator-(BigIntBase& b){
+    assert(compare(b) >= 0);
+    BigIntBase ret(true, capacity);
+    ret.subtract(*this, b);
+    return ret;
+}
+string BigIntBase::toStringInBase(ui base){
+    if (base == 10){
+        string s(size, ' ');
+        for (ui i = 0; i < size; i++)
+            s[i] = (*this)[size-1-i]+'0';
+        return s;
+    }else{
+        cout << "base " << base << " hasn't been implemented";
+        return NULL;
+    }
+}
+
+inline ostream& operator <<(ostream &os, BigIntBase& n) {
     os << n.toStringInBase(10);
     return os;
 }

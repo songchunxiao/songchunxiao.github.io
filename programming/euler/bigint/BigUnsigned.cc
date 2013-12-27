@@ -112,7 +112,7 @@ BigUnsigned::CmpRes BigUnsigned::compareTo(const BigUnsigned &x) const {
  * I'll leave in the copy.
  */
 #define DTRT_ALIASED(cond, op) \
-	if (cond) { \<#const value_type &__x#>
+	if (cond) { \
 		BigUnsigned tmpThis; \
 		tmpThis.op; \
 		*this = tmpThis; \

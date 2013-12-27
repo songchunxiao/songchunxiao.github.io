@@ -1,10 +1,17 @@
 "Jie's vimrc file, feel free to use
-colorscheme peachpuff
+colorscheme desert
 let mapleader = ","
 let maplocalleader = "\\"
 syntax on
 
-
+set tags=tags
+set guioptions-=T
+"for taglist {{{
+    
+nnoremap <silent> <F5> :TlistUpdate<CR> :TlistToggle<CR>
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Auto_Open=1
+"}}}
 
 "---------handy shortcuts--------------------{{{
 function! MouseAction(state)
@@ -14,7 +21,8 @@ endfunction
 nnoremap / /\v
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <localleader>h :set hlsearch!<cr>
-nnoremap <localleader>s :sh<cr>
+nnoremap <localleader>sh :sh<cr>
+
 
 nnoremap <C-Right> gt
 nnoremap <C-Left> gT
@@ -23,13 +31,12 @@ inoremap <C-Left> <esc>gT
 
 nnoremap <C-A> <esc>ggyG
 vnoremap <C-C> "+yy
-inoremap <C-V> <esc>"+pa
-nnoremap <C-V> "+p
+inoremap <C-X><C-V> <esc>"+pa
+nnoremap <C-X><C-V> "+p
 "open touch pad
-nnoremap <C-A-M> :call MouseAction(0)<cr><cr>
-nnoremap <C-M> :call MouseAction(1)<cr><cr>
-inoremap <C-A-M> <esc>:call MouseAction(0)<cr><cr>a
-inoremap <C-M> <esc>:call MouseAction(1)<cr><cr>a
+
+nnoremap <silent> <C-X><C-M> :call MouseAction(1)<cr><cr>
+nnoremap <silent> <C-X><C-N> :call MouseAction(0)<cr><cr>
 "}}}
 "---------------------------- omnicompletion BEGIN
 filetype plugin on
