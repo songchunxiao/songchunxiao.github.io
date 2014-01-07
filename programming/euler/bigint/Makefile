@@ -4,10 +4,8 @@ all:
 library-objects =  BigUnsigned.o  BigInteger.o  BigIntegerAlgorithms.o  BigUnsignedInABase.o  BigIntegerUtils.o  
 library-headers = NumberlikeArray.hh BigUnsigned.hh BigInteger.hh BigIntegerAlgorithms.hh BigUnsignedInABase.hh BigIntegerLibrary.hh 
 
-# To ``make the library'', make all its objects using the implicit rule.
 library: $(library-objects)
 
-# Conservatively assume that all the objects depend on all the headers.
 $(library-objects): $(library-headers)
 
 # TESTSUITE (NOTE: Currently expects a 32-bit system)
@@ -38,14 +36,9 @@ testsuite-cleanfiles = \
 # your own Makefile.
 
 # Components of the program.
-program = sample
-program-objects = sample.o
-
-# Conservatively assume all the program source files depend on all the library
-# headers.  You can change this if it is not the case.
+program = myTest
+program-objects =  myTest.o
 $(program-objects) : $(library-headers)
-
-# How to link the program.  The implicit rule covers individual objects.
 $(program) : $(program-objects) $(library-objects)
 	g++ $^ -o $@
 

@@ -76,9 +76,10 @@ vector<int> getPrimes(int maxN){
  *          n is the times this factor in n.
  */
 vector<primeFactor> getPrimeFactors(int n){
+    int sqrtn = (int)sqrt(n);
     vector<int> p = getPrimes(n+1);
     vector<primeFactor> ret;
-    for (ui i = 0; i < p.size(); i++)
+    for (ui i = 0; i < p.size() && p[i] <= sqrtn; i++)
         if (n % p[i] == 0){
             int num = 0;
             while (n % p[i] == 0){
@@ -87,6 +88,26 @@ vector<primeFactor> getPrimeFactors(int n){
             }
             ret.push_back(primeFactor(p[i], num));
         }
+    if (n != 1) ret.push_back(primeFactor(n, 1));
+    return ret;
+}
+/*
+ *  Return the number of factors of n using prime table.
+ */
+vector<primeFactor> getPrimeFactorsPrimeTable(int n, vector<int> p){
+    int sqrtn = (int)sqrt(n);
+    assert(lastEle(p) >= sqrtn);
+    vector<primeFactor> ret;
+    for (ui i = 0; i < p.size() && p[i] <= sqrtn; i++)
+        if (n % p[i] == 0){
+            int num = 0;
+            while (n % p[i] == 0){
+                n /= p[i];
+                num++;
+            }
+            ret.push_back(primeFactor(p[i], num));
+        }
+    if (n != 1) ret.push_back(primeFactor(n, 1));
     return ret;
 }
 /*
@@ -97,6 +118,38 @@ int getNumOfFactors(int n){
     int ret = 1;
     for (ui i = 0; i < p.size(); i++)
         ret *= (p[i].num + 1);
+    return ret;
+}
+/*  
+ * Get the sum of all divisors of n.
+ */
+ll getSumOfDivisors(int n){
+    vector<primeFactor> pf = getPrimeFactors(n);
+    ll ret = 1;
+    for (ui i = 0; i < pf.size(); i++){
+        int a = 1, b = 1;
+        for (int j = 0; j < pf[i].num; j++){
+            b *= pf[i].factor;
+            a += b;
+        }
+        ret *= a;
+    }
+    return ret;
+}
+/*  
+ * Get the sum of all divisors of n using prime table p.
+ */
+ll getSumOfDivisorsPrimeTable(int n, vector<int> p){
+    vector<primeFactor> pf = getPrimeFactorsPrimeTable(n, p);
+    ll ret = 1;
+    for (ui i = 0; i < pf.size(); i++){
+        int a = 1, b = 1;
+        for (int j = 0; j < pf[i].num; j++){
+            b *= pf[i].factor;
+            a += b;
+        }
+        ret *= a;
+    }
     return ret;
 }
 /*
@@ -117,4 +170,18 @@ int getNumOfFactorsPrimeTable(int n, vector<int> p){
         if (n == 1) break;
     }
     return ret;
+}
+
+bool isLeapYear(ui n){
+    return ( n%400 == 0 ) || (( n%4 == 0 )&&( n%100 ));
+}
+
+/*  
+ *  This function is used to calculate y, which satisfy (x*y % p == w).
+ */
+ll exgcd(ll x, ll p, ll w){
+    x %= p;
+    w %= p;
+    if (w == 0) return 0;
+    return (exgcd(p, x, (x*p-w)%x) * p + w)/x;
 }

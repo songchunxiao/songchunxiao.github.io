@@ -9,6 +9,7 @@ chmod a+x ~/generated/push.sh
 #PPA
 sudo apt-add-repository ppa:thefanclub/grive-tools
 sudo add-apt-repository ppa:atareao/atareao #google calendar
+sudo add-apt-repository ppa:nvbn-rm/ppa #everpad
 
 sudo apt-get update
 
@@ -25,6 +26,7 @@ sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     apt-file \
     iftop bmon\
     calendar-indicator\
+    everpad
 
 #Tex/Latex installing
 sudo apt-get install texlive-full evince

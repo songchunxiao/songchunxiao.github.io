@@ -30,6 +30,7 @@ inoremap <C-Right> <esc>gt
 inoremap <C-Left> <esc>gT
 
 nnoremap <C-A> <esc>ggyG
+nnoremap <C-X><C-A> <esc>gg"+yG
 vnoremap <C-C> "+yy
 inoremap <C-X><C-V> <esc>"+pa
 nnoremap <C-X><C-V> "+p
@@ -65,6 +66,7 @@ set hlsearch incsearch
 "edit .vimrc and plugins
 "---------------------------- {{{
 nmap <localleader>ev :tabedit $MYVIMRC<cr>'tzo
+nmap <localleader>em :tabedit makefile
 nnoremap <localleader>sv :source $MYVIMRC<cr>
 nnoremap <localleader>s% :source %<cr>
 "}}}

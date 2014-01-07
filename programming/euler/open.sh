@@ -4,4 +4,4 @@ if [ ${1} = ""]; then
 else
     file=${1}
 fi
-gvim -p $file.cc euler.cc euler.h 
+gvim -p $file.cc euler.cc euler.h  makefile

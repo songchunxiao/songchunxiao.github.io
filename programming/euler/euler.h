@@ -28,7 +28,13 @@ A.Naming Conventions
 #define LINR(i,l,r) (l<=i&&i<=r)
 #define LIN(i,l,r) (l<=i&&i<r)
 #define INR(i,l,r) (l<i&&i<r)
+#define F(i,L,R) for (int i = L; i < R; i++)
+#define FE(i,L,R) for (int i = L; i <= R; i++)
+#define FF(i,L,R) for (int i = L; i > R; i--)
+#define FFE(i,L,R) for (int i = L; i >= R; i--)
 #define char2Int(c) (c-'0')
+#define lastEle(vec) vec[vec.size()-1]
+#define hBit(msb,n) asm("bsrl %1,%0" : "=r"(msb) : "r"(n));
 #define ll long long
 #define ui unsigned int
 #define us unsigned short
@@ -47,4 +53,14 @@ int gcd(int, int);
 int squareOfSum(int);
 int sumOfSquare(int);
 void selectPrimes(bool*, int maxN);
+vector<int> getPrimes(int maxN);
+vector<primeFactor> getPrimeFactors(int n);
+vector<primeFactor> getPrimeFactorsPrimeTable(int n, vector<int> p);
+int getNumOfFactors(int n);
+int getNumOfFactorsPrimeTable(int n, vector<int> p);
+ll getSumOfDivisors(int n);
+ll getSumOfDivisorsPrimeTable(int n, vector<int> p);
+string spellNumber(ui number);
+bool isLeapYear(ui n);
+ll exgcd(ll x, ll p, ll w);
 #endif

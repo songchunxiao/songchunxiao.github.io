@@ -7,7 +7,7 @@
 // `BigIntegerLibrary.hh' includes all of the library headers.
 #include "BigIntegerLibrary.hh"
 
-int main() {
+int hello() {
 	/* The library throws `const char *' error messages when things go
 	 * wrong.  It's a good idea to catch them using a `try' block like this
 	 * one.  Your C++ compiler might need a command-line option to compile
