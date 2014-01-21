@@ -10,7 +10,7 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Jie Feng (http://hey.i-feng.org/), jokerfeng2010@gmail.com
+ *         Author:  Jie Feng (http://hey.i-feng.org/), jiefeng.hopkins@gmail.com
  *   Organization:  
  *
  * =====================================================================================

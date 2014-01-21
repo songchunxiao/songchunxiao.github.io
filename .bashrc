@@ -153,3 +153,5 @@ alias vimall="gvim -p *.h *.cc makefile"
 alias sourcenow="source ~/.bashrc"
 alias bashe="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
+alias chperl="chmod u+x *.pl";
+

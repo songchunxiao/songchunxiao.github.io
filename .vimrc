@@ -197,10 +197,13 @@ augroup filetype_tex
     autocmd!
     autocmd FileType tex set spell
     autocmd FileType tex set textwidth=120
-    autocmd FileType tex nnoremap <F5> :!latex % <cr>
-    autocmd FileType tex nnoremap <F6> :execute "!evince " . expand('%:r').".dvi" <cr>
-    autocmd FileType tex nnoremap <F7> :execute "!latex % && evince " . expand('%:r') . ".dvi" <cr>
+    
+    autocmd FileType tex nnoremap <F6> :execute "!evince " . expand('%:r').".pdf &" <cr>
     autocmd FileType tex nnoremap <F8> g<c-g>
+augroup END
+augroup filetype_perl
+    autocmd!
+    autocmd FileType perl noremap <F10> :!perl % <cr>
 augroup END
 "}}}
 

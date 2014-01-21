@@ -23,7 +23,7 @@ sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     artha dict goldendict goldendict-wordnet \
     vlc-nox gimp apcalc\
     figlet\
-    apt-file \
+    apt-file unrar\
     iftop bmon\
     calendar-indicator\
     everpad

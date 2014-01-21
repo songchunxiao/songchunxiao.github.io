@@ -50,6 +50,7 @@
 #use strict;
 use warnings;
 use utf8;
+use feature qw/state say switch/;
 
 == Comments.file description pm == map:chpm, sc:d, start, noindent ==
 #

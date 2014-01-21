@@ -6,7 +6,7 @@ SetMacro( 'AUTHOR',      'Jie Feng' )
 SetMacro( 'AUTHORREF',   'http://hey.i-feng.org/' )
 SetMacro( 'COMPANY',     'The Johns Hopkins University' )
 SetMacro( 'COPYRIGHT',   'Copyright (c) |YEAR|, |AUTHOR|' )
-SetMacro( 'EMAIL',       'jokerfeng2010@gmail.com' )
+SetMacro( 'EMAIL',       'jiefeng.hopkins@gmail.com' )
 SetMacro( 'LICENSE',     'GNU General Public License' )
 SetMacro( 'ORGANIZATION','' )
 
