@@ -30,26 +30,14 @@ testsuite-cleanfiles = \
 	testsuite.o testsuite testsuite.expected \
 	testsuite.out testsuite.err
 
-# The rules below build a program that uses the library.  They are preset to
-# build ``sample'' from ``sample.cc''.  You can change the name(s) of the
-# source file(s) and program file to build your own program, or you can write
-# your own Makefile.
 
-# Components of the program.
 program = myTest
 program-objects =  myTest.o
 $(program-objects) : $(library-headers)
 $(program) : $(program-objects) $(library-objects)
 	g++ $^ -o $@
 
-# Delete all generated files we know about.
 clean :
 	rm -f $(library-objects) $(testsuite-cleanfiles) $(program-objects) $(program)
 
-# I removed the *.tag dependency tracking system because it had few advantages
-# over manually entering all the dependencies.  If there were a portable,
-# reliable dependency tracking system, I'd use it, but I know of no such;
-# cons and depcomp are almost good enough.
-
-# Come back and define default target.
-all : library $(program)
+all : library $(progra)
