@@ -1,4 +1,4 @@
-"Jie's vimrc file, feel free to use
+"J vimr file, feel free to use
 colorscheme desert
 let mapleader = ","
 let maplocalleader = "\\"
@@ -12,12 +12,20 @@ nnoremap <silent> <F5> :TlistUpdate<CR> :TlistToggle<CR>
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Auto_Open=1
 "}}}
-
 "---------handy shortcuts--------------------{{{
 function! MouseAction(state)
     execute "!xinput set-prop 14 'Device Enabled' " . a:state 
 endfunction
 
+function! SpellCheck()
+    if (&spell)
+        set nospell
+    else
+        set spell
+    endif
+endfunction
+
+noremap <localleader>sc :call SpellCheck()<cr>
 nnoremap / /\v
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <localleader>h :set hlsearch!<cr>
@@ -49,7 +57,7 @@ noremap ;' :%s:::cg<Left><Left><Left><Left>
 "highlight errors 
 "---------------------------- {{{
 nnoremap <leader>w :match Error /\v +$/<cr>
-nnoremap <leader>W :match none<cr>
+nnoremap <leader>W :match none<cr>k}}}
 "}}}
 "editing set
 "---------------------------- {{{
@@ -62,15 +70,13 @@ set autoindent
 set number
 set hlsearch incsearch
 "}}}
-
 "edit .vimrc and plugins
 "---------------------------- {{{
 nmap <localleader>ev :tabedit $MYVIMRC<cr>'tzo
 nmap <localleader>em :tabedit makefile
-nnoremap <localleader>sv :source $MYVIMRC<cr>
+nnoremap <localleader>sv :source $MYVIMRC<cr> execute 'set ft=' . &filetype<cr>
 nnoremap <localleader>s% :source %<cr>
 "}}}
-
 "statusline
 "---------------------------- {{{
 "set statusline=%F          fullpath
@@ -85,15 +91,12 @@ set statusline+=(%2v)%4l   " Current line
 set statusline+=/    " Separator
 set statusline+=%L   " Total lines
 "}}}
-
 "abbreviations
 "---------------------------- {{{
 iabbrev "- "----------------------------
 iabbrev mysig -- <cr>Jie Feng<cr>jokerfeng2010@gmai.com
 iabbrev ednl endl
 "}}}
-
-
 "normal mode mappings
 "---------------------------- {{{
 "---------------------------- select a word
@@ -103,20 +106,16 @@ noremap <localleader>do ggVG:!tr '\n' ' '<cr><esc>"+yy
 "nnoremap <c-u> viwUw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 "}}}
-
-"---------------------------- noremap, nnoremap, vnoremap, inoremap
-"---------------------------- n non recursive map
+"---------------------------- noremap, nnoremap, vnoremap, inoremap, n: non recursive map
 "insert mode mappings
 "---------------------------- {{{
 "inoremap <c-d> <esc>ddi
 inoremap <c-u> <esc>lviwUwi
 "}}}
-
 "visual mode mappings
 "---------------------------- {{{
 "vnoremap " <esc>`<i"<esc>`>a"<esc>
 "}}}
-
 "operator-pending mappings
 "---------------------------- {{{
 onoremap b /return<cr>
@@ -136,10 +135,6 @@ nnoremap <localleader>pb :execute "rightbelow vsplit  " . bufname("#")  <cr>
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>p :cprevious<cr>
 "}}}
-
-" fengjie
-
-
 "---------------------------- disable key :inoremap <esc> <nop>
 "autocmd BufNewFile * :write
 "autocmd BufWritePre,BufRead *.html :normal gg=G
@@ -148,6 +143,7 @@ nnoremap <leader>p :cprevious<cr>
 "---------------------------- {{{
 augroup text
     autocmd!
+    autocmd FileType text nnoremap <F7> :set ft=tex<cr>
     autocmd FileType text onoremap <buffer> ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
     autocmd FileType text onoremap <buffer> ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
 augroup END
@@ -195,9 +191,8 @@ augroup END
 
 augroup filetype_tex
     autocmd!
-    autocmd FileType tex set spell
+    autocmd FileType tex nnoremap <F7> :execute "set ft=text"<cr>
     autocmd FileType tex set textwidth=120
-    
     autocmd FileType tex nnoremap <F6> :execute "!evince " . expand('%:r').".pdf &" <cr>
     autocmd FileType tex nnoremap <F8> g<c-g>
 augroup END
@@ -218,6 +213,11 @@ filetype plugin indent on
 
 
 " Hilight excess line length in python
+augroup filetype_markdown
+    autocmd!
+    autocmd FileType markdown set spell
+    autocmd FileType markdown nnoremap <F8> :!./commit.sh<cr>
+augroup END
 augroup vimrc_autocmds
     autocmd!
     " highlight characters past column 120

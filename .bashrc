@@ -19,7 +19,7 @@ HISTCONTROL=irgnoredups:erasedups
 HISTTIMEFORMAT="%F-%M-%S --> "
 HISTIGNORE="cd *":"ls *":"mkdir *"
 
-export PATH=~/PhpStorm/bin/:~/potion/bin:~/bin:$PATH
+export PATH=~/PhpStorm/bin/:~/potion/bin:~/bin:~/adt-bundle/sdk/platform-tools/:~/adt-bundle/sdk/tools/:$PATH
  
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -122,7 +122,7 @@ alias cw='cd /home/dxks/NetBeansProjects/yangda/app/webroot/'
 
 alias phpcsz='phpcs --standard=Zend '
 alias cls='clear'
-alias netbeans='/home/dxks/netbeans-7.3rc2/bin/netbeans &'
+#alias netbeans='/home/dxks/netbeans-7.3rc2/bin/netbeans &'
 alias a2reload='sudo service apache2 restart'
 alias ssh_you='ssh you@192.168.0.101'
 
@@ -154,4 +154,5 @@ alias sourcenow="source ~/.bashrc"
 alias bashe="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias chperl="chmod u+x *.pl";
-
+export AWS_ACCESS_KEY_ID="AKIAJN4FFUU5DQNIVQHQ"
+export AWS_SECRET_ACCESS_KEY="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"
