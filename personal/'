@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plain Cover Letter
+% LaTeX Template
+% Version 1.0 (28/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute 
+% http://www.rpi.edu/dept/arc/training/latex/resumes/
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{letter} % Default font size of the document, change to 10pt to fit more text
+
+\usepackage{newcent} % Default font is the New Century Schoolbook PostScript font 
+%\usepackage{helvet} % Uncomment this (while commenting the above line) to use the Helvetica font
+
+% Margins
+\topmargin=-1in % Moves the top of the document 1 inch above the default
+\textheight=8.5in % Total height of the text on the page before text goes on to the next page, this can be increased in a longer letter
+\oddsidemargin=-10pt % Position of the left margin, can be negative or positive if you want more or less room
+\textwidth=6.5in % Total width of the text, increase this if the left margin was decreased and vice-versa
+
+\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{Mrs. Jane Smith \\
+Recruitment Officer \\
+The Corporation \\
+123 Pleasant Lane \\
+City, State 12345} 
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME & ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+\large\bf Jie Feng \\ % Your name
+%\vspace{20pt} \hrule height 1pt % If you would like a horizontal line separating the name from the address, uncomment the line to the left of this text
+3501 Marylander, Apt 736 \\ Baltimore, MD21218 \\ (443) 996-2046 % Your address and phone number
+\end{center} 
+\vfill
+
+\signature{John Smith} % Your name for the signature at the bottom
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT SECTION
+%----------------------------------------------------------------------------------------
+
+\opening{Dear Hiring Professional,} 
+
+I am seeking an software engineer(C/C++) internship position for this summer 2014. 
+I am currently a graduate student at Johns Hopkins University majoring security informatics and I will graduate in
+December this year.
+
+%\item Excellent algorithm design and implementation skills, with 1500+ pieces of algorithm programs written so far.
+My most knowledgeable area is building softwares and solving problems which requires a very strong background in algorithm. 
+This is due to my harding working of this area in the past several years. 
+I started studying algorithms and hacking algorithm problems with C/C++ since I was a high school kid, which was 6
+years ago. Since then, I intermittently solved more than 1500 pieces of programs among a vast area of topics in algorithm.
+Hacking algorithm problems in my everyday life is just like doing homework. 
+Besides that, I will choose to attend some algorithm contests to test my algorithm skills, sometimes may just for fun.
+Luckily, I've done some very good performances among these contests, just for example, I attended a contest from
+"hackerrank", and I ranked 42th among more than 4000 contestants at last.
+My years of algorithm studying, practicing and competing requires not only a quick and clear mind in problem solving,
+but also a distinguished willpower in trying things hard and new.
+I've prepared my algorithm skills for many years, all I need is just a platform which I can contribute with my skills 
+and demonstrate my value as a programmer. 
+
+Besides my persistent commitment in algorithm, I tried many other topic as well, especially among math, cryptography, security, web
+building, networking, android development, 
+Bloomberg is a financial software, data and media company who has the mission to help different parties make smarter, faster, more profitable decisions.
+What 
+
+
+order to get there, we need constant ideas, energy, innovation - which is where you come in
+I have built a very strong C/C++ skills as well as many other languages in the past years. 
+
+
+I am currently a graduate student in The Johns Hopkins University, where I have acquired valuable skills in both computer security and software developing.
+To take advantage of one's skills in his daily work enable him works more productively and more cheerfully. 
+That's why I applied to this position and why I need this opportunity.    
+The attached resume details my extensive experience and training in algorithm, cryptography, security, Linux, scripting languages, database and web design. 
+My resume will give you an understanding my skills in a nutshell.
+However, I would be able to convince you about what I have demonstrated in the resume if I'm given an interview opportunity.
+Please contact me if you have any questions.
+ 
+
+
+%PARAGRAPH ONE: I am  
+%State the reason for the letter, name the position or type of work you are applying for 
+%and identify the source from which you learned of the opening (i.e. career development center, newspaper, employment service, personal contact).
+%
+%PARAGRAPH TWO: Indicate why you are interested in the position, the company, its products, services - above all, stress what you can do for the employer. If you are a recent graduate, explain how your academic background makes you a qualified candidate for the position. If you have practical work experience, point out specific achievements or unique qualifications. Try not to repeat the same information the reader will find in the resume. Refer the reader to the enclosed resume or application which summarizes your qualifications, training, and experiences. The purpose of this section is to strengthen your resume by providing details which bring your experiences to life. 
+% 
+%PARAGRAPH THREE: Request a personal interview and indicate your flexibility as to the time and place. Repeat your phone number in the letter and offer assistance to help in a speedy response. For example, state that you will be in the city where the company is located on a certain date and would like to set up an interview. Alternatively, state that you will call on a certain date to set up an interview. End the letter by thanking the employer for taking time to consider your credentials. 
+%
+\closing{Sincerely yours,}
+\encl{Curriculum vitae, employment form} % List your enclosed documents here, comment this out to get rid of the "encl:"
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}

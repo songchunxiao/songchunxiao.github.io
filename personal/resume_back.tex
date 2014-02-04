@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass{article}
 %\usepackage[lmargin=3.0cm, rmargin=1.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
 \usepackage{fullpage}
 \usepackage{tabu}
@@ -6,10 +6,11 @@
 \usepackage{xifthen}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\textheight=11in
-\usepackage[a4paper,bindingoffset=0.2in,left=0.1in,right=0.1in,top=0.1in,bottom=0.1in,footskip=.25in]{geometry}
+\textheight=10in
 \pagestyle{empty}
 \raggedright
+
+
 \def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
 % DEFINITIONS FOR RESUME
 \newcommand{\td}{\textasciitilde}
@@ -24,9 +25,12 @@
 \newcommand{\employer}[4]{{ \textbf{#1} \emph{#2}, #3 \hfill \underline{#4}\\ }}
 
 \newcommand{\URL}[1] {\textbf{\scriptsize #1}}
-\newcommand{\SC}[1] {\URL{(#1)}}
-\newcommand{\project}[4]{{ \textbf{#1} \emph{#2}, #3
-    \ifthenelse{\isempty{#4}}{}{\hfill \SC{#4}\\}   }}
+\newcommand{\SC}[1] {\URL{Source Code(#1)}}
+\newcommand{\project}[3]{{ \textbf{#1} (#2) 
+    \ifthenelse{\isempty{#3}}{}{\hfill \SC{#3}\\}   }}
+
+
+
 \newcommand{\contact}[3]{
 \vspace*{-8pt}
 \begin{center}
@@ -61,7 +65,7 @@
 
 \small
 \smallskip
-%\vspace*{-60pt}
+\vspace*{-60pt}
 
 \contact{Jie Feng}
 {3501\,St.\,Paul\,St.\,Apt.\,736, Baltimore MD\,21218}
@@ -112,45 +116,27 @@
 
 	\end{achievements}
 
-\header{Project Experience}{\textbf{(\td\,$\Longrightarrow$\,https://github.com/hophacker)}}
-\project{"Bang"-phone number exchanger}{Baltimore U.S.A}{2014}{}
-\begin{achievements}
-\item This is an Android App built within 36 hours in \emph{Hophacks}. 
-    It can help a group of people to add each other's contact with pressing the button of our App just for seconds.
-    I wrote the server with \emph{Python} and helped the interface designing. 
-\end{achievements}
-\project{"Euler" Math Library\,-\,C++}{Baltimore U.S.A}{2013-2014}{\td/euler}
+    \header{Project Experience}{\textbf{(\td\,$\Longrightarrow$\,https://github.com/hophacker)}}
+\project{Searchable Cryptographic Storage System}{2012-2013}{\td/CS2}
     \begin{achievements}
-    \item "Euler"\,can help you hack general math problems like calculating the sum of all the factors of a given number. 
-    \item "Euler"\,has an independent \emph{Big\,Integer\,Library} which has some awesome functionalities,\,ex,\,calculating power.
+    \item This project implemented a highly efficient cryptographic storage system which guarantees searching, dynamic
+        adding and deleting operations among encrypted data, with friendly interface. 
     \end{achievements}
-\project {Algorithm Practicing}{China}{2006\,-\,Present}{\td/AlgorithmPractice}
-    \begin{achievements}
-    \item Algorithm practicing is my loved hobby and occupies me a fare amount of time. 
-        Currently, I'm using the name "hophacker" constantly attending contests from \emph{Topcoder, CodeChef,
-        Codeforce, hackerrank, CodeEval}, etc.
-    \end{achievements}
-\project{Evaluating existing social network platform-\SINA}{Baltimore U.S.A}{2013}{\td/spcProject}
+\project{Evaluating existing social network platform-\SINA}{2013}{\td/spcProject}
     \begin{achievements}
     \item Implemented a \emph{distributed} crawler which can crawl more than 6,900,000 rows of user data in one week. 
     \item Evaluated the ability to gather personal information, the prevalence of attacks, and the identification
         and classification of bad actors/profiles and threats to \SINA.
     \end{achievements}
-    \project{Searchable Cryptographic Storage System}{Suzhou China}{2012-2013}{\td/CS2}
+    \project{Universal Online Examination System(UOES)}{2011-2013}{\td/universal-online-exam }
     \begin{achievements}
-    \item This project implemented a highly efficient cryptographic storage system which guarantees searching, dynamic
-        adding and deleting operations among encrypted data, with friendly interface. 
-    \end{achievements}
-    \project{Universal Online Examination System}{Suzhou China}{2011-2013}{\td/universal-online-exam}
-    %$http://universal-online-exam.com/}
-    \begin{achievements}
-    \item It is a web-based examination system built with high stability, friendly interface, secure communication. 
+    \item UOES is a web-based examination system built with high stability, friendly interface, secure communication. 
         It has served 40,000+ students and has the ability to support 1,000+ examinees taking exam concurrently.
-    \item It provides service to: (1)Examinee: registration, examination taking and practicing, profile management, message posting and information feedback.
+    \item UOES provides service to: (1)Examinee: registration, examination taking and practicing, profile management, message posting and information feedback.
         (2)Manager: time setting, examinee selecting\&maintaining, questions importing\&maintaining, feedback checking, announcement delivering, 
-        monitoring, history viewing, statistic analysing, report generating, etc.  \hfill\URL{}
-    \item Designed and implemented a database which strictly conformed to standard normalization forms and naming
-        rules. 
+        monitoring, history viewing, statistic analysing, report generating, etc.  \hfill\URL{Demo(http://universal-online-exam.com/)}
+    \item Independently designed and implemented a database(20 tables) which strictly conformed to standard normalization forms and naming
+        rules. \hfill \SC{\td/universal-online-exam/blob/master/UEOS.sql}
     \item Combined several most successful web technologies and ideas, including LAMP workflow, CakePHP Framework,
         Smarty template, KoolPHPSuite, JQuery(UI), JS plugins like WYSIWYG editor, JqGrid.
     \end{achievements}
@@ -158,23 +144,34 @@
 %    \begin{achievements}
 %    \item Perl version of the world's most popular search-engine based English-Chinese translator \emph{"Youdao"}.
 %    \end{achievements}
-\project{Hacking Nintendo 3DS Console}{Suzhou China}{2011}{}
+\project{Hacking Nintendo 3DS Console}{2011}{}
     \begin{achievements}
     \item Reverse engineered key binary code of existing NDS emulator, contributed code to new 3DS emulator.
     \item Reverse engineered cartridge driver and simulated communication between 3DS console and game cartridges.
     \end{achievements}
+\project{"Euler" Math Library\,-\,C++}{2013}{\td/euler}
+    \begin{achievements}
+    \item "Euler"\,can help you hack general math problems like calculating the sum of all the factors of a given number. 
+    \item "Euler"\,has an independent \emph{Big\,Integer\,Library} which has some awesome functionalities,\,ex,\,calculating power.
+    \end{achievements}
+\project {Algorithm Practicing}{2006\,-\,NOW}{\td/AlgorithmPractice}
+    \begin{achievements}
+    \item Algorithm practicing is my loved hobby and occupies me a fare amount of time. 
+        Currently, I'm using the name "hophacker" constantly attending contests from \emph{Topcoder, CodeChef,
+        Codeforce, hackerrank, CodeEval}, etc.
+    \end{achievements}
 
 \header{Skills}{}
 \begin{achievements}
-\item \textbf{Languages}: \textbf{C/C++, Java, Python, PHP, Perl}, HTML/CSS/Javascript/JQuery, Android, Scala, Bash,
-    Vimscript, JSP, Pascal, Assembly, Regular Expressions, Matlab, \LaTeX
-\item \textbf{Tools}: \textbf{Vim, Linux, Shell}, Emacs, Eclipse, Netbeans, Visual Studio, Github, 
-    intellij, phpStorm, IDA Pro.
-%\item Rich experience in implementing \emph{Cryptographic} softwares and exploiting \emph{software vulnerabilities}
-%\item Rich experience in Database Design, Web Design(LAMP workflow, MVC Framework).
+\item Excellent algorithm design and implementation skills, with 1500+ pieces of algorithm programs written so far.
+\item Remarkable experience in using scripting language and writing scripts to maintain Linux server and database.
+\item Rich experience in implementing \emph{Cryptographic} softwares and exploiting \emph{software vulnerabilities}
+\item Rich experience in Database Design, Web Design(LAMP workflow, MVC Framework).
 %    like \emph{Format String Vulnerability, Integer Overflow, Return-to-libc, SQL Injection, XSS, CSRF, Frame Busting} etc.
-%\item Good knowledge with Cryptography, Security, Algorithm, Data Structures, Network, Operating System.
-%\item Excellent algorithm design and implementation skills, with 1500+ pieces of algorithm programs written so far.
-%\item Remarkable experience in using scripting language and writing scripts to maintain Linux server and database.
+\item Proficiency in software development with \emph{C/C++, Java, Scala, Bash, Vimscript, Perl, Python, PHP, JSP,
+    Pascal, Android, Assembly, HTML, CSS, Javascript, JQuery, Regular Expressions}.
+\item Proficiency in using \emph{\LaTeX, MATLAB, Vim, Emacs, Eclipse, Netbeans, Visual Studio, Github, IDA Pro}.
+\item Good knowledge with Cryptography, Security, Algorithm, Data Structures, Network, Operating System.
+
 \end{achievements}
 \end{document}
