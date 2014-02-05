@@ -144,7 +144,7 @@ alias ensite=ensiteIt
 shopt -s dotglob
 alias watchMemory='watch "ps aux | sort -nrk 4 | head -n 40"'
 alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'
-alias replaceUnity='DISPLAY=:0 unity --replace'
+alias replaceUnity='sudo DISPLAY=:0 unity --replace'
 alias logOut="logoutUser john"
 alias open="gnome-open"
 alias openMouse="xinput set-prop 14 'Device Enabled' 1"
