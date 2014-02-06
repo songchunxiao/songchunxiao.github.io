@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1391668005 "/home/john/personal/cover_microsoft.tex" "cover_microsoft.pdf" "cover_microsoft" 1391668006
+["pdflatex"] 1391666965 "/home/john/personal/cover_bloomberg.tex" "cover_bloomberg.pdf" "cover_bloomberg" 1391666965
   "/etc/texmf/web2c/texmf.cnf" 1386542071 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/john/personal/cover_microsoft.tex" 1391668005 6955 610161fcfd74bbcbca5144ebb7552893 ""
+  "/home/john/personal/cover_bloomberg.tex" 1391666964 7950 77453467614314e381773e4f9a2b2af4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncb7t.tfm" 1136768653 1748 e2a60f37215e3585dff293cec494a67b ""
@@ -36,9 +36,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1374751034 31103 dbc49c70ca9e47fd7f4e40a14691afe7 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1386542356 1092724 68dfee8822f2be26b3ec35baed7917ed ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1386542274 3823577 048af0641a6bc93288c3d563ff0e60a6 ""
-  "cover_microsoft.aux" 1391668006 55 6b055403d60a925ce0a29081bc9d3657 ""
-  "cover_microsoft.tex" 1391668005 6955 610161fcfd74bbcbca5144ebb7552893 ""
+  "cover_bloomberg.aux" 1391666965 55 6b055403d60a925ce0a29081bc9d3657 ""
+  "cover_bloomberg.tex" 1391666964 7950 77453467614314e381773e4f9a2b2af4 ""
   (generated)
-  "cover_microsoft.aux"
-  "cover_microsoft.log"
-  "cover_microsoft.pdf"
+  "cover_bloomberg.log"
+  "cover_bloomberg.pdf"
+  "cover_bloomberg.aux"
