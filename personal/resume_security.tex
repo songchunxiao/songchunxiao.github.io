@@ -45,11 +45,14 @@
         \hspace{0.1in}\emph{#4} & #5 & \\ 
     \end{tabu}
 }
+%\newcommand{\course}[2]{
+%    \begin{tabu} to \linewidth {X[l5]}
+%
+%    \end{tabu}
+%}
 
-
-\newcommand{\schoolwithcourses}[4]{
- \textbf{#1} #2 $\bullet$ #3\\ 
-#4 $\bullet$  Selected Coursework:\\
+\newcommand{\courses}[1]{
+#1 $\bullet$  Selected Coursework:\\
 \vspace*{5pt}
 }
 
@@ -75,14 +78,16 @@
 \newschool{The Johns Hopkins University Baltimore}{MD,\,U.S.A.}{Dec 2014}{Master of Science in Security Informatics}{GPA: 3.31/4.00}
 \begin{achievements} \begin{footnotesize}
 \item Student membership of \emph{Association for Computing Machinery},  Member of \emph{JHUACM}
-\item Selected Courses: Advanced Topics in Cryptograpy, Advanced Topics in Computer Security, Modern Cryptography, Security \& Privacy in Computing, Software Vulnerability Analysis , Algorithm I
+\item Selected Courses: \textsf{Advanced Topics in Cryptograpy,\quad Advanced Topics in Computer Security, \quad Modern Cryptography, \\
+        \quad\quad\quad\quad\quad\quad\quad\quad Security \& Privacy in Computing,\quad Software Vulnerability Analysis
+    ,\quad Algorithm I}
 \end{footnotesize} \end{achievements}
 \newschool{Soochow University}{Suzhou,\,China}{Jun 2013}{Bachelor of Engineering} {GPA: 3.30/4.00(Major:3.73)}
 	%\area{Computer Science}{ Unix Programming $\cdot$ Data Structures $\cdot$ Automata \& Computation $\cdot$ Computer System Fundamentals $\cdot$ Computer Networks $\cdot$ Info Retrieval and Web Agents $\cdot$ Operating Systems $\cdot$ Natural Lang Processing $\cdot$ Algorithms $\cdot$ Object Oriented Systems $\cdot$ Declarative Methods $\cdot$ Artificial Intelligence $\cdot$ Network Security $\cdot$ Databases}
 	%\area{Mathematics}{Multivariable Calculus $\cdot$ Linear Algebra $\cdot$ Discrete Math $\cdot$ Math Models}
 \begin{achievements} \begin{footnotesize}
-    \item \honor{National First Prize(8th/126)},\specialname{"Lanqiao Cup"} National Software Designing Contest(Java), \place{Beijing China}, 2011
-    \item \honor{National First Prize(24th/932)},\specialname{"Lanqiao Cup"} National Software Designing Contest(C/C++), \place{Beijing China}, 2012
+    \item \honor{National First Prize(8th/126 finalists)},\specialname{"Lanqiao Cup"} National Software Designing Contest(Java), \place{Beijing China}, 2011
+    \item \honor{National First Prize(24th/932 finalists)},\specialname{"Lanqiao Cup"} National Software Designing Contest(C/C++), \place{Beijing China}, 2012
     \item \honor{Bronze Medal}, ACM-ICPC Asia Regional Contest, \place{Tianjin China}, 2012
     \item \honor{Meritorious Winner}, Mathematical Contest in Modeling, \place{U.S.A}, 2011
     \item \honor{National Winning Prize}, National Information Security Contest for College Students, \place{Zhenzhou China}, 2012
@@ -169,10 +174,9 @@
 
 \header{Skills}{}
 \begin{achievements}
-\item \textbf{Languages}: \textbf{C/C++, Java, Python, PHP, Perl}, HTML/CSS/Javascript/JQuery, Android, Scala, Bash,
-    Vimscript, JSP, Pascal, Assembly, Regular Expressions, Matlab, \LaTeX
-\item \textbf{Tools}: \textbf{Vim, Linux, Shell}, Emacs, Eclipse, Netbeans, Visual Studio, Github, 
-    intellij, phpStorm, IDA Pro.
+\item \textbf{Languages}: \textsf{C/C++, D, Java, Scala, Python, PHP, Perl, HTML/CSS/Javascript/JQuery, Android, Bash,
+    Vimscript, JSP,  \\ \quad\quad\quad\quad\quad\quad Pascal, Assembly, Regular Expressions, Matlab, \LaTeX}
+\item \textbf{Tools}: \textsf{Vim, Linux, Shell, Emacs, Eclipse, Netbeans, Visual Studio, Github, intellij, phpStorm, IDA Pro.}
 %\item Rich experience in implementing \emph{Cryptographic} softwares and exploiting \emph{software vulnerabilities}
 %\item Rich experience in Database Design, Web Design(LAMP workflow, MVC Framework).
 %    like \emph{Format String Vulnerability, Integer Overflow, Return-to-libc, SQL Injection, XSS, CSRF, Frame Busting} etc.
