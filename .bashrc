@@ -20,6 +20,7 @@ HISTTIMEFORMAT="%F-%M-%S --> "
 HISTIGNORE="cd *":"ls *":"mkdir *"
 
 export PATH=~/PhpStorm/bin/:~/potion/bin:~/bin:~/adt-bundle/sdk/platform-tools/:~/adt-bundle/sdk/tools/:$PATH
+export PATH=/home/john/bin/sbt/bin/:$PATH
  
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

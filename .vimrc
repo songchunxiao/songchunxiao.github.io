@@ -1,4 +1,4 @@
-"J vimr file, feel free to use
+"J vim file, feel free to use
 colorscheme desert
 let mapleader = ","
 let maplocalleader = "\\"
@@ -150,6 +150,7 @@ augroup END
 
 augroup filetype_vim
     autocmd!
+    "autocmd FileType cpp,vim setlocal foldmethod=indent
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 

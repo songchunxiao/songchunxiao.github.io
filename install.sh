@@ -26,7 +26,7 @@ sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     apt-file unrar\
     iftop bmon\
     calendar-indicator\
-    everpad
+    everpad tmux
 
 #Tex/Latex installing
 sudo apt-get install texlive-full evince

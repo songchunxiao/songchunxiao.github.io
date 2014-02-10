@@ -37,11 +37,6 @@
 \vspace*{-4pt}
 }
 \newenvironment{achievements}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}}
-\newcommand{\schoolwithcourses}[4]{
- \textbf{#1} #2 $\bullet$ #3\\ 
-#4 $\bullet$  Selected Coursework:\\
-\vspace*{5pt}
-}
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
 \newcommand{\newschool}[5]{
@@ -50,6 +45,14 @@
         \hspace{0.1in}\emph{#4} & #5 & \\ 
     \end{tabu}
 }
+
+
+\newcommand{\schoolwithcourses}[4]{
+ \textbf{#1} #2 $\bullet$ #3\\ 
+#4 $\bullet$  Selected Coursework:\\
+\vspace*{5pt}
+}
+
 
 \newcommand{\school}[4]{
  \textbf{#1} #2 $\bullet$ #3\\ 
@@ -71,8 +74,8 @@
 
 \newschool{The Johns Hopkins University Baltimore}{MD,\,U.S.A.}{Dec 2014}{Master of Science in Security Informatics}{GPA: 3.31/4.00}
 \begin{achievements} \begin{footnotesize}
-\item Student membership of \it{Association for Computing Machinery},  Member of \it{JHUACM}
-\item Selected Courses: Advanced Cryptograpy, Modern Cryptography, Advanced Computer Security, Algorithm I
+\item Student membership of \emph{Association for Computing Machinery},  Member of \emph{JHUACM}
+\item Selected Courses: Advanced Topics in Cryptograpy, Advanced Topics in Computer Security, Modern Cryptography, Security \& Privacy in Computing, Software Vulnerability Analysis , Algorithm I
 \end{footnotesize} \end{achievements}
 \newschool{Soochow University}{Suzhou,\,China}{Jun 2013}{Bachelor of Engineering} {GPA: 3.30/4.00(Major:3.73)}
 	%\area{Computer Science}{ Unix Programming $\cdot$ Data Structures $\cdot$ Automata \& Computation $\cdot$ Computer System Fundamentals $\cdot$ Computer Networks $\cdot$ Info Retrieval and Web Agents $\cdot$ Operating Systems $\cdot$ Natural Lang Processing $\cdot$ Algorithms $\cdot$ Object Oriented Systems $\cdot$ Declarative Methods $\cdot$ Artificial Intelligence $\cdot$ Network Security $\cdot$ Databases}
@@ -81,7 +84,6 @@
     \item \honor{National First Prize(8th/126)},\specialname{"Lanqiao Cup"} National Software Designing Contest(Java), \place{Beijing China}, 2011
     \item \honor{National First Prize(24th/932)},\specialname{"Lanqiao Cup"} National Software Designing Contest(C/C++), \place{Beijing China}, 2012
     \item \honor{Bronze Medal}, ACM-ICPC Asia Regional Contest, \place{Tianjin China}, 2012
-    \item \honor{Coach Awarding}, ACM-ICPC Asia Regional Contest, \place{Tianjin China}, 2012
     \item \honor{Meritorious Winner}, Mathematical Contest in Modeling, \place{U.S.A}, 2011
     \item \honor{National Winning Prize}, National Information Security Contest for College Students, \place{Zhenzhou China}, 2012
     \item \honor{"Excelent Graduate"} of Soochow University, \place{Suzhou China}, 2013
@@ -93,23 +95,20 @@
 
 \employer{Soochow University\,-\,CS Department}{Suzhou China}{2012-2013} {Student Algorithm Lecturer\&Coach}
 	\begin{achievements}
-    \item Prepared and delivered algorithm courses to students(mainly freshman and sophomore) once a week, concentrated on
-        data structures, dynamic programming, graph theory and number theory.
-    \item Managed the \emph{ACM-ICPC} team of \emph{Soochow University}. Responsible for leading the team hacking algorithm
+    \item Prepared and delivered algorithm courses to students, concentrated on
+        data structures, dynamic programming, graph theory. Managed the \emph{ACM-ICPC} team of \emph{Soochow University}. Responsible for leading the team hacking algorithm
         challenges, preparing the team for algorithm contests, holding algorithm talks and selecting new members.
 	\end{achievements}
 
-\employer{Suzhou Ruiyi Information Technology, Inc.}{Suzhou China}{2012}{Web Developer, Android Developer}
+\employer{Suzhou Ruiyi Information Technology, Inc.}{Suzhou China}{2012}{Web Developer}
 	\begin{achievements}
-    \item Involved in designing the interface for an Android\,App which can be used to find housing information.
-	\item Developed scrips to crawl data from the Internet and to process the data into required structure.
+        \item Wrote scrips to crawl and process renting information process into required structure .Also involved Android development.
 	\end{achievements}
 
 \employer{Yangzhou University\,-\,Information Center}{Yangzhou China}{2011-2012}{Database Manager}
 	\begin{achievements}
-    \item Responsible for Oracle 9i maintenance on Windows NT and MySQL maintenance on Ubuntu Server.
-    \item Database creating and tuning. Set up backups, import, export, and other monitoring scripts.
-    \item Managed database security. Designed and developed automated data backup and restoration procedures.
+    %\item Responsible for Oracle 9i maintenance on Windows NT and MySQL maintenance on Ubuntu Server.
+    \item Database creating and tuning on Windows NT and Ubunbu Server. Set up backups, import, export, and other monitoring scripts.  Managed database security. Designed and developed automated data backup and restoration procedures.
 
 	\end{achievements}
 
@@ -122,8 +121,7 @@
 \end{achievements}
 \project{"Euler" Math Library\,-\,C++}{Baltimore U.S.A}{2013-2014}{\td/euler}
     \begin{achievements}
-    \item "Euler"\,can help you hack general math problems like calculating the sum of all the factors of a given number. 
-    \item "Euler"\,has an independent \emph{Big\,Integer\,Library} which has some awesome functionalities,\,ex,\,calculating power.
+    \item I wrote this library to help people solve general math problems and Big-Integer math problems
     \end{achievements}
 \project {Algorithm Practicing}{China}{2006\,-\,Present}{\td/AlgorithmPractice}
     \begin{achievements}
@@ -131,6 +129,13 @@
         Currently, I'm using the name "hophacker" constantly attending contests from \emph{Topcoder, CodeChef,
         Codeforce, hackerrank, CodeEval}, etc.
     \end{achievements}
+\project{Software Vulnerability Analysis}{Baltimore U.S.A}{2013}{}
+
+\begin{achievements}
+\item The project has two parts: (1)Several programming tasks to get hands on experience exploiting software vulnerabilities like
+    Buffer Overflow, Format String Vulnerability, Integer Overflow etc. (2 )Reverse Engineer a given Web
+    Sever Binary and exploit vulnerability in it using return into libc attack.
+\end{achievements}
 \project{Evaluating existing social network platform-\SINA}{Baltimore U.S.A}{2013}{\td/spcProject}
     \begin{achievements}
     \item Implemented a \emph{distributed} crawler which can crawl more than 6,900,000 rows of user data in one week. 
@@ -151,8 +156,6 @@
         monitoring, history viewing, statistic analysing, report generating, etc.  \hfill\URL{}
     \item Designed and implemented a database which strictly conformed to standard normalization forms and naming
         rules. 
-    \item Combined several most successful web technologies and ideas, including LAMP workflow, CakePHP Framework,
-        Smarty template, KoolPHPSuite, JQuery(UI), JS plugins like WYSIWYG editor, JqGrid.
     \end{achievements}
 %\project{"Youdao" Dictionary}{2014}{\td/youdao}
 %    \begin{achievements}
