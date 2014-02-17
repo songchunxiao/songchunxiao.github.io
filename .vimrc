@@ -1,4 +1,5 @@
-"J vim file, feel free to use
+"J vi file, feel free to use
+set tabpagemax=100
 colorscheme desert
 let mapleader = ","
 let maplocalleader = "\\"
@@ -6,6 +7,7 @@ syntax on
 
 set tags=tags
 set guioptions-=T
+nnoremap <localleader>ac mzgg=G`z
 "for taglist {{{
     
 nnoremap <silent> <F5> :TlistUpdate<CR> :TlistToggle<CR>

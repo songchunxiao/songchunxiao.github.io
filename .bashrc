@@ -134,9 +134,9 @@ umask 022
 
 # Some more alias to avoid making mistakes:
 ensiteIt(){
-	a2dissite *; 
-	a2ensite $1; 
-	service apache2 reload
+	sudo a2dissite *; 
+	sudo a2ensite $1; 
+	sudo service apache2 restart
 }
 logoutUser(){
     sudo pkill -u $1
