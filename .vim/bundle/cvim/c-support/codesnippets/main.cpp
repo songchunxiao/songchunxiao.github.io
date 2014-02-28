@@ -10,8 +10,9 @@
 #include <cassert>
 using namespace std;
 #define bit(x,i) (x&(1<<i))
-#define max(a,b) (a<b?b:a)
-#define abs(x) (x<0?-x:x)
+#define lowbit(x) ((x)&((x)^((x)-1)))
+//#define max(a,b) (a<b?b:a)
+//#define abs(x) (x<0?-x:x)
 #define IN(i,l,r) (l<i&&i<r)
 #define LINR(i,l,r) (l<=i&&i<=r)
 #define LIN(i,l,r) (l<=i&&i<r)
@@ -52,13 +53,20 @@ using namespace std;
 #define wez3(n,m,k) int (n),(m),(k); scanf("%d %d %d",&(n),&(m),&(k));
 inline void pisz(int n) { printf("%d\n",n); }
 #define TESTS wez(testow)while(testow--)
-#define whileZ int n; getI(n); while(n--)
+#define whileZ int T; getI(T); while(T--)
 #define printA(a,L,R) FE(i,L,R) cout << a[i] << (i==R?'\n':' ')
+#define printV(a) printA(a,0,a.size()-1)
+#define MAXN 10000
+typedef int elem_t;
 template<typename T,typename TT> ostream& operator<<(ostream &s,pair<T,TT> t) {return s<<"("<<t.first<<","<<t.second<<")";}
 template<typename T> ostream& operator<<(ostream &s,vector<T> t){F(i,0,SZ(t))s<<t[i]<<" ";return s; }
 int main ( int argc, char *argv[] ) {
-    int n,m;
+    /*FILE* file = fopen(argv[1], "r");
+    int a, b;
+    while(fscanf(file, "%d,%d", &a, &b) != EOF){
+    }*/
     whileZ{
+        int n,m;
     }
     return EXIT_SUCCESS;
 }

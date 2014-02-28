@@ -20,7 +20,7 @@ HISTTIMEFORMAT="%F-%M-%S --> "
 HISTIGNORE="cd *":"ls *":"mkdir *"
 
 export PATH=~/PhpStorm/bin/:~/potion/bin:~/bin:~/adt-bundle/sdk/platform-tools/:~/adt-bundle/sdk/tools/:$PATH
-export PATH=/home/john/bin/sbt/bin/:$PATH
+export PATH=/home/john/bin/sbt/bin/:/home/john/DCD/:$PATH
  
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -148,8 +148,8 @@ alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'
 alias replaceUnity='sudo DISPLAY=:0 unity --replace'
 alias logOut="logoutUser john"
 alias open="gnome-open"
-alias openMouse="xinput set-prop 14 'Device Enabled' 1"
-alias closeMouse="xinput set-prop 14 'Device Enabled' 0"
+alias openMouse="xinput set-prop 12 'Device Enabled' 1"
+alias closeMouse="xinput set-prop 12 'Device Enabled' 0"
 alias vimall="gvim -p *.h *.cc makefile"
 alias sourcenow="source ~/.bashrc"
 alias bashe="vim ~/.bashrc"
