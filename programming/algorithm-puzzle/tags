@@ -1,0 +1,195 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALL	quora-typehead-search.cpp	40;"	d	file:
+ALL	temp.cpp	40;"	d	file:
+DBG	quora-typehead-search.cpp	37;"	d	file:
+DBG	temp.cpp	37;"	d	file:
+DIS	quora-nearby.cpp	/^    DIS(const int INDEX, const double DIS){$/;"	f	struct:DIS
+DIS	quora-nearby.cpp	/^struct DIS{$/;"	s	file:
+Distance	quora-nearby.cpp	/^inline double Distance(double _x, double _y){$/;"	f
+Distance	quora-nearby.cpp	/^inline double Distance(int id){$/;"	f
+F	quora-typehead-search.cpp	23;"	d	file:
+F	temp.cpp	23;"	d	file:
+FE	quora-typehead-search.cpp	24;"	d	file:
+FE	temp.cpp	24;"	d	file:
+FF	quora-typehead-search.cpp	25;"	d	file:
+FF	temp.cpp	25;"	d	file:
+FFE	quora-typehead-search.cpp	26;"	d	file:
+FFE	temp.cpp	26;"	d	file:
+FOREACH	quora-typehead-search.cpp	39;"	d	file:
+FOREACH	temp.cpp	39;"	d	file:
+IN	quora-typehead-search.cpp	19;"	d	file:
+IN	temp.cpp	19;"	d	file:
+INF	quora-typehead-search.cpp	46;"	d	file:
+INF	temp.cpp	46;"	d	file:
+INR	quora-typehead-search.cpp	22;"	d	file:
+INR	temp.cpp	22;"	d	file:
+IOS	quora-typehead-search.cpp	44;"	d	file:
+IOS	temp.cpp	44;"	d	file:
+LIN	quora-typehead-search.cpp	21;"	d	file:
+LIN	temp.cpp	21;"	d	file:
+LINR	quora-typehead-search.cpp	20;"	d	file:
+LINR	temp.cpp	20;"	d	file:
+LOCATION	quora-nearby.cpp	/^struct LOCATION{    $/;"	s	file:
+MAXN	quora-typehead-search.cpp	60;"	d	file:
+MAXN	temp.cpp	60;"	d	file:
+N	quora-nearby.cpp	/^int T, Q, N;$/;"	v
+N	quora-typehead-search.cpp	/^int N;$/;"	v
+PI	quora-typehead-search.cpp	47;"	d	file:
+PI	temp.cpp	47;"	d	file:
+POINT	quora-nearby.cpp	/^struct POINT{$/;"	s	file:
+Q	quora-nearby.cpp	/^int T, Q, N;$/;"	v
+RELTOPICS	quora-nearby.cpp	/^    RELTOPICS(int i, vi t){$/;"	f	struct:RELTOPICS
+RELTOPICS	quora-nearby.cpp	/^struct RELTOPICS{$/;"	s	file:
+REMAX	quora-typehead-search.cpp	36;"	d	file:
+REMAX	temp.cpp	36;"	d	file:
+REMIN	quora-typehead-search.cpp	38;"	d	file:
+REMIN	temp.cpp	38;"	d	file:
+SZ	quora-typehead-search.cpp	35;"	d	file:
+SZ	temp.cpp	35;"	d	file:
+T	quora-nearby.cpp	/^int T, Q, N;$/;"	v
+TESTS	quora-typehead-search.cpp	56;"	d	file:
+TESTS	temp.cpp	56;"	d	file:
+add	quora-nearby.cpp	/^void add(priority_queue<DIS> &q, DIS &a){$/;"	f
+add	quora-typehead-search.cpp	/^void add(priority_queue<ansNode> &q, ansNode &a){$/;"	f
+all	quora-typehead-search.cpp	63;"	d	file:
+all	temp.cpp	63;"	d	file:
+ansNode	quora-typehead-search.cpp	/^    ansNode(const string _id, const double _score, const int _time){$/;"	f	struct:ansNode
+ansNode	quora-typehead-search.cpp	/^struct ansNode{$/;"	s	file:
+bit	quora-typehead-search.cpp	15;"	d	file:
+bit	temp.cpp	15;"	d	file:
+char2Int	quora-typehead-search.cpp	27;"	d	file:
+char2Int	temp.cpp	27;"	d	file:
+check	quora-typehead-search.cpp	/^bool check(vector<string>& words, string& tokens){$/;"	f
+clr	quora-typehead-search.cpp	30;"	d	file:
+clr	temp.cpp	30;"	d	file:
+cpresent	quora-typehead-search.cpp	66;"	d	file:
+cpresent	temp.cpp	66;"	d	file:
+dis	quora-nearby.cpp	/^    double dis;$/;"	m	struct:DIS	file:
+distanceFromQue	quora-nearby.cpp	/^double distanceFromQue(int i){$/;"	f
+elem_t	quora-nearby.cpp	/^typedef int elem_t;$/;"	t	file:
+elem_t	quora-typehead-search.cpp	/^typedef int elem_t;$/;"	t	file:
+elem_t	temp.cpp	/^typedef int elem_t;$/;"	t	file:
+expr	quora-typehead-search.cpp	/^map<string, node> expr;$/;"	v
+extractScore	quora-typehead-search.cpp	/^void extractScore(map<string,int>& typeIdScore, string& b){$/;"	f
+fi	quora-typehead-search.cpp	50;"	d	file:
+fi	temp.cpp	50;"	d	file:
+findQuestions	quora-nearby.cpp	/^void findQuestions(){$/;"	f
+findTopics	quora-nearby.cpp	/^void findTopics(){$/;"	f
+fx	quora-typehead-search.cpp	/^const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};$/;"	v
+fx	temp.cpp	/^const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};$/;"	v
+generateRes	quora-nearby.cpp	/^void generateRes(priority_queue<DIS>& q){$/;"	f
+getI	quora-typehead-search.cpp	31;"	d	file:
+getI	temp.cpp	31;"	d	file:
+getII	quora-typehead-search.cpp	32;"	d	file:
+getII	temp.cpp	32;"	d	file:
+getIII	quora-typehead-search.cpp	33;"	d	file:
+getIII	temp.cpp	33;"	d	file:
+getS	quora-typehead-search.cpp	34;"	d	file:
+getS	temp.cpp	34;"	d	file:
+getScore	quora-typehead-search.cpp	/^inline double getScore(const string& typeId){$/;"	f
+hBit	quora-typehead-search.cpp	29;"	d	file:
+hBit	temp.cpp	29;"	d	file:
+id	quora-typehead-search.cpp	/^    string id;$/;"	m	struct:ansNode	file:
+ii	quora-nearby.cpp	/^typedef pair<int,int> ii; $/;"	t	file:
+ii	quora-typehead-search.cpp	/^typedef pair<int,int> ii; $/;"	t	file:
+ii	temp.cpp	/^typedef pair<int,int> ii; $/;"	t	file:
+index	quora-nearby.cpp	/^    int index;$/;"	m	struct:DIS	file:
+index	quora-nearby.cpp	/^    int index;$/;"	m	struct:POINT	file:
+index	quora-nearby.cpp	/^    int index;$/;"	m	struct:RELTOPICS	file:
+lastEle	quora-typehead-search.cpp	28;"	d	file:
+lastEle	temp.cpp	28;"	d	file:
+ll	evernote-3.cpp	3;"	d	file:
+ll	quora-typehead-search.cpp	41;"	d	file:
+ll	quora-typehead-search.cpp	49;"	d	file:
+ll	temp.cpp	41;"	d	file:
+ll	temp.cpp	49;"	d	file:
+lowbit	quora-typehead-search.cpp	16;"	d	file:
+lowbit	temp.cpp	16;"	d	file:
+main	evernote-3.cpp	/^int main(){$/;"	f
+main	evernote-Frequency-counting.cpp	/^int main(){$/;"	f
+main	evernote-challenge.cpp	/^int main(){$/;"	f
+main	quora-nearby.cpp	/^int main ( int argc, char *argv[] ) {$/;"	f
+main	quora-typehead-search.cpp	/^int main ( int argc, char *argv[] ) {$/;"	f
+main	temp.cpp	/^int main ( int argc, char *argv[] ) {$/;"	f
+mp	quora-typehead-search.cpp	48;"	d	file:
+mp	temp.cpp	48;"	d	file:
+node	evernote-Frequency-counting.cpp	/^    node(string w, int t){$/;"	f	struct:node
+node	evernote-Frequency-counting.cpp	/^struct node{$/;"	s	file:
+node	quora-typehead-search.cpp	/^struct node{$/;"	s	file:
+node	temp.cpp	/^    node(const int _x){$/;"	f	struct:node
+node	temp.cpp	/^struct node{$/;"	s	file:
+num	quora-nearby.cpp	/^ui num;$/;"	v
+num	quora-typehead-search.cpp	/^ui num;$/;"	v
+operator <	evernote-Frequency-counting.cpp	/^    bool operator<(const node& b)const{$/;"	f	struct:node
+operator <	quora-nearby.cpp	/^    bool operator<(const DIS &b)const{$/;"	f	struct:DIS
+operator <	quora-typehead-search.cpp	/^    bool operator<(const ansNode &b)const{$/;"	f	struct:ansNode
+operator <	temp.cpp	/^    bool operator<(const node &b)const{$/;"	f	struct:node
+operator <<	quora-typehead-search.cpp	/^template<typename T,typename TT> ostream& operator<<(ostream &s,pair<T,TT> t) {return s<<"("<<t.first<<","<<t.second<<")";}$/;"	f
+operator <<	quora-typehead-search.cpp	/^template<typename T> ostream& operator<<(ostream &s,vector<T> t){F(i,0,SZ(t))s<<t[i]<<" ";return s; }$/;"	f
+operator <<	temp.cpp	/^template<typename T,typename TT> ostream& operator<<(ostream &s,pair<T,TT> t) {return s<<"("<<t.first<<","<<t.second<<")";}$/;"	f
+operator <<	temp.cpp	/^template<typename T> ostream& operator<<(ostream &s,vector<T> t){F(i,0,SZ(t))s<<t[i]<<" ";return s; }$/;"	f
+pb	quora-typehead-search.cpp	45;"	d	file:
+pb	quora-typehead-search.cpp	62;"	d	file:
+pb	temp.cpp	45;"	d	file:
+pb	temp.cpp	62;"	d	file:
+pisz	quora-typehead-search.cpp	/^inline void pisz(int n) { printf("%d\\n",n); }$/;"	f
+pisz	temp.cpp	/^inline void pisz(int n) { printf("%d\\n",n); }$/;"	f
+present	quora-typehead-search.cpp	65;"	d	file:
+present	temp.cpp	65;"	d	file:
+printA	quora-typehead-search.cpp	58;"	d	file:
+printA	temp.cpp	58;"	d	file:
+printAnsNodes	quora-typehead-search.cpp	/^void printAnsNodes(priority_queue<ansNode> &q){$/;"	f
+printV	quora-typehead-search.cpp	59;"	d	file:
+printV	temp.cpp	59;"	d	file:
+processWords	quora-typehead-search.cpp	/^void processWords(int type){$/;"	f
+questions	quora-nearby.cpp	/^vector<RELTOPICS > questions;$/;"	v
+score	quora-typehead-search.cpp	/^    double score;$/;"	m	struct:ansNode	file:
+score	quora-typehead-search.cpp	/^    double score;$/;"	m	struct:node	file:
+se	quora-typehead-search.cpp	51;"	d	file:
+se	temp.cpp	51;"	d	file:
+sz	quora-typehead-search.cpp	61;"	d	file:
+sz	temp.cpp	61;"	d	file:
+time	quora-typehead-search.cpp	/^    int time;$/;"	m	struct:ansNode	file:
+time	quora-typehead-search.cpp	/^    int time;$/;"	m	struct:node	file:
+times	evernote-Frequency-counting.cpp	/^    int times;$/;"	m	struct:node	file:
+tokens	quora-typehead-search.cpp	/^    string tokens;$/;"	m	struct:node	file:
+topics	quora-nearby.cpp	/^    vi topics;$/;"	m	struct:RELTOPICS	file:
+topics	quora-nearby.cpp	/^vector<POINT> topics;$/;"	v
+topicsA	quora-nearby.cpp	/^POINT topicsA[100001];$/;"	v
+tr	quora-typehead-search.cpp	64;"	d	file:
+tr	temp.cpp	64;"	d	file:
+type	quora-typehead-search.cpp	/^    string type;$/;"	m	struct:node	file:
+typeIdScore	quora-typehead-search.cpp	/^map<string, int> typeIdScore;$/;"	v
+ui	evernote-challenge.cpp	4;"	d	file:
+ui	quora-nearby.cpp	15;"	d	file:
+ui	quora-typehead-search.cpp	42;"	d	file:
+ui	temp.cpp	42;"	d	file:
+us	quora-typehead-search.cpp	43;"	d	file:
+us	temp.cpp	43;"	d	file:
+vi	quora-nearby.cpp	/^typedef vector<int> vi; $/;"	t	file:
+vi	quora-typehead-search.cpp	/^typedef vector<int> vi; $/;"	t	file:
+vi	temp.cpp	/^typedef vector<int> vi; $/;"	t	file:
+vvi	quora-nearby.cpp	/^typedef vector<vi> vvi; $/;"	t	file:
+vvi	quora-typehead-search.cpp	/^typedef vector<vi> vvi; $/;"	t	file:
+vvi	temp.cpp	/^typedef vector<vi> vvi; $/;"	t	file:
+wez	quora-typehead-search.cpp	52;"	d	file:
+wez	temp.cpp	52;"	d	file:
+wez2	quora-typehead-search.cpp	53;"	d	file:
+wez2	temp.cpp	53;"	d	file:
+wez3	quora-typehead-search.cpp	54;"	d	file:
+wez3	temp.cpp	54;"	d	file:
+whileZ	quora-typehead-search.cpp	57;"	d	file:
+whileZ	temp.cpp	57;"	d	file:
+word	evernote-Frequency-counting.cpp	/^    string word;$/;"	m	struct:node	file:
+x	quora-nearby.cpp	/^    double x, y;$/;"	m	struct:LOCATION	file:
+x	quora-nearby.cpp	/^    double x, y;$/;"	m	struct:POINT	file:
+x	quora-nearby.cpp	/^double x, y;$/;"	v
+x	temp.cpp	/^    int x;$/;"	m	struct:node	file:
+y	quora-nearby.cpp	/^    double x, y;$/;"	m	struct:LOCATION	file:
+y	quora-nearby.cpp	/^    double x, y;$/;"	m	struct:POINT	file:
+y	quora-nearby.cpp	/^double x, y;$/;"	v

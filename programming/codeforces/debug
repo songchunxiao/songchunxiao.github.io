@@ -1,0 +1,4 @@
+d br
+b 80 if (k==1 && i ==1)
+run < in
+

@@ -1,5 +1,5 @@
 #TopCoder ContestApplet Preferences File
-#Sat Jan 11 19:05:47 EST 2014
+#Tue Jan 21 12:21:26 EST 2014
 com.topcoder.client.contestApplet.common.LocalPreferences.menufont=Abyssinica SIL
 com.topcoder.client.contestApplet.common.LocalPreferences.menufontsize=10
 com.topcoder.client.contestApplet.common.LocalPreferences.commonclasspath=
@@ -161,11 +161,11 @@ com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatQuestionFore=-16
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatSpeakerFore=-1
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatSpeakerBack=-16777216
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatQuestionBack=-16777216
-com.topcoder.jmaContestApplet.frames.codingframe.location=65\:24
-com.topcoder.jmaContestApplet.frames.codingframe.size=1535\:876
+com.topcoder.jmaContestApplet.frames.codingframe.location=78\:24
+com.topcoder.jmaContestApplet.frames.codingframe.size=767\:876
 com.topcoder.jmaContestApplet.frames.codingframe.dividerloc=398
-com.topcoder.jmaContestApplet.frames.sourceViewer.location=203\:24
-com.topcoder.jmaContestApplet.frames.sourceViewer.size=767\:876
+com.topcoder.jmaContestApplet.frames.sourceViewer.location=406\:39
+com.topcoder.jmaContestApplet.frames.sourceViewer.size=767\:861
 com.topcoder.jmaContestApplet.frames.sourceViewer.dividerloc=194
 ui.theme=Default
 fileeditor.config.dirName=./programming/topcoder/programs
