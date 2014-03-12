@@ -1,4 +1,4 @@
-se tabpagemax=100
+set tabpagemax=100
 colorscheme desert
 let mapleader = ","
 let maplocalleader = "\\"
@@ -6,6 +6,7 @@ syntax on
 
 set tags=tags
 set guioptions-=T
+nnoremap Q <nop>
 
 function! Repeat()
     let times = input("Count: ")

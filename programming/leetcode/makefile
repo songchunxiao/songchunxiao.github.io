@@ -1,12 +1,12 @@
-target= 4sumgood
+target= text-justification
 
 all:
-	g++ -o $(target) -g $(target).cpp
+	g++ -o $(target) -g $(target).cpp -w
 
 .PHONY: run
 
 run:
-	./${target} < in
+	./${target}
 
-gdb:
+debug:
 	gdb ${target}

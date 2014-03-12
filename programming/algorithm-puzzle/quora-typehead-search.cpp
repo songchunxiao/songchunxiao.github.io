@@ -75,12 +75,13 @@ const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};
 struct node{
     string type;
     float score;
-    vector<string> tokens;
+    vector<int> tokens;
     int time;
 };
 int N;
 ui num;
-
+char data[4000000];
+int dataN = 0;
 struct ansNode{
     string id;
     float score;
@@ -96,27 +97,42 @@ struct ansNode{
     }
 };
 map<string, node> expr;
-inline bool pre(string& sub, string& s){
-    if (s.length() < sub.length()) return false;
-    for (ui i = 0; i < sub.length(); i++)
+inline bool pre(char* sub, char* s){
+    int lenSub = strlen(sub);
+    if (strlen(s) < lenSub) return false;
+    for (ui i = 0; i < lenSub; i++)
         if (s[i] != sub[i]) return false;
     return true;
 }
-inline bool prefix(string& word, vector<string>& tokens){
+inline int cmp(char* w, char* s){
+    return strcmp(w, s);
+}
+inline bool prefix(char* word, vector<int>& tokens){
     int L = 0, R = tokens.size() - 1, M;
     while(L <= R){
         M = (L+R) >> 1;
-        if (pre(word, tokens[M])) return true;
+        if (pre(word, data+tokens[M])) return true;
         else{
-            if (word > tokens[M]) L = M+1;
+            if (cmp(word, data+tokens[M]) > 0) L = M+1;
             else R = M-1;
         }
     }
     return false;
 }
-bool check(vector<string>& words, vector<string>& tokens){
-    for (ui i = 0; i < words.size(); i++){
-        if (!prefix(words[i], tokens)) return false;
+#define skipSpace(s,i) while(s[i] == ' ' && s[i] != 0) i++
+#define skipNonSpace(s,i) while(s[i] != ' ' && s[i] != 0) i++
+bool check(char* words, vector<int>& tokens){
+    int i = 0;
+    while(words[i] != 0){
+        skipSpace(words, i);
+        if (words[i] == 0) break;
+        int j = i;
+        skipNonSpace(words, j);
+        char temp = words[j];
+        words[j] = 0;
+        if (!prefix(words+i, tokens)) return false;
+        words[j] = temp;
+        i = j;
     }
     return true;
 }
@@ -156,26 +172,19 @@ inline float getScore(const string& typeId){
     if (typeIdScore.find(typeId) == typeIdScore.end()) return 1;
     else return typeIdScore[typeId];
 }
-inline void lowerIt(string &s){
-    for (ui i = 0; i < s.length(); i++)
+inline void lowerIt(char* s){
+    for (ui i = 0; s[i] != 0; i++)
         if ('A' <= s[i] && s[i] <= 'Z')
             s[i] = s[i] - 'A' + 'a';
 }
+char words[10000];
 void processWords(int classes){
     string line;
-    vector<string> words;
-    string word;
-    getline(cin, line);
-    istringstream is(line);
-    while(is >> word) {
-        lowerIt(word); 
-        words.push_back(word); 
-    }
-
+    gets(words);
+    lowerIt(words);
     priority_queue<ansNode> q;
-
     for (map<string,node>::iterator x = expr.begin(); x != expr.end(); x++){
-        vector<string>& tokens = x->second.tokens;
+        vector<int>& tokens = x->second.tokens;
         float score;
         if (classes == 0) 
             score = x->second.score;
@@ -190,34 +199,47 @@ void processWords(int classes){
     }
     printAnsNodes(q);
 }
+void addData(char* s, int b, int len){
+    memcpy(data+dataN, s+b, len * sizeof(char));
+    data[dataN+len] = 0;
+    dataN += (len+1);
+}
+bool comp(const int a, const int b){
+    return strcmp(data+a, data+b) < 0;
+}
 int main ( int argc, char *argv[] ) {
     cin >> N;
-    string line, com, type, id, token;
+    char com[10];
+    string type, id, token;
+    char line[20000];
     int time = 0;
     while(N--){
-        cin >> com;
-        if (com == "ADD"){
+        scanf("%s", com);
+        if (strcmp(com, "ADD") == 0){
             node t;
             t.time = time++;
             cin >> t.type >> id >> t.score;
-            getline(cin, line);
-            istringstream is(line);
-            while(is >> token){
-                lowerIt(token);
-                t.tokens.push_back(token);
+            gets(line);
+            lowerIt(line);
+            int i = 0;
+            while(line[i] != 0){
+                skipSpace(line, i);
+                if (line[i] == 0) break;
+                int j = i;
+                skipNonSpace(line, j);
+                t.tokens.push_back(dataN);
+                addData(line, i, j-i);
+                i = j;
             }
-            sort(t.tokens.begin(), t.tokens.end());
-            //for (ui i = 0; i < t.tokens.size(); i++){
-            //    cout << t.tokens[i] << (i == t.tokens.size()-1? '\n':' ');
-            //}
+            sort(t.tokens.begin(), t.tokens.end(), comp);
             expr[id] = t;
-        }else if (com == "DEL"){
+        }else if (strcmp(com, "DEL") == 0){
             cin >> id;
             expr.erase(id);
-        }else if (com == "QUERY"){
+        }else if (strcmp(com, "QUERY") == 0){
             cin >> num;
             if (num == 0){
-                getline(cin, line);
+                gets(line);
                 cout << endl;
                 continue;
             }
@@ -225,9 +247,9 @@ int main ( int argc, char *argv[] ) {
         }else{ //"WQUERY"
             typeIdScore.clear();
             int numOfB;
-            cin >> num >> numOfB;
+            getII(num, numOfB);
             if (num == 0){
-                getline(cin, line);
+                gets(line);
                 cout << endl;
                 continue;
             }

@@ -81,10 +81,21 @@ struct node{
     }
 };
 int main ( int argc, char *argv[] ) {
-    priority_queue<node> s;
-    s.push(node(12));
-    s.push(node(19));
-    s.push(node(10));
-    cout << s.top().x << endl;
+    char line []="Rudolph is 12 years old";
+    string s1, s2;
+    int num = 1000000;
+    int a;
+    char s[1000];
+    char item[100];
+    int i;
+//    while(i = sscanf(line, "%s", item)){
+//        cout << i << endl;
+//        printf("%s\n", item);
+//    }
+    char c;
+    while(~scanf("%s%c", s, &c)){
+        cout << (int)c << endl;
+        printf("%s\n", s);
+    }
     return EXIT_SUCCESS;
 }

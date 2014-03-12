@@ -1,4 +1,5 @@
-target= quora-typehead-search
+target= quora-typehead-search2
+#target= temp
 
 all:
 	g++ -o $(target) -g $(target).cpp
