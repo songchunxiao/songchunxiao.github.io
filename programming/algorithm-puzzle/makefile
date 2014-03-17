@@ -1,4 +1,4 @@
-target= quora-typehead-search2
+target= quora-nearby
 #target= temp
 
 all:

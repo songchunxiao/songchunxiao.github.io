@@ -1,4 +1,4 @@
-target= text-justification
+target= wildcard-mathcing
 
 all:
 	g++ -o $(target) -g $(target).cpp -w
