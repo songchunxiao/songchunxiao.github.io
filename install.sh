@@ -1,4 +1,5 @@
 #!/bin/sh
+#by Jie Feng
 ~/install/installVim.sh
 mkdir ~/generated
 
@@ -38,7 +39,7 @@ sudo apt-get install -y grive-tools
 sudo apt-get install cmake clang bzr build-dep unity nux gnome-common \
     libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0 libclang1-3.4 clang-3.4
 #Lamp
-sudo apt-get install tasksel 
+sudo apt-get install tasksel rake
 sudo tasksel install lamp-server
 sudo apt-get install php5-cgi
 #Git setup
