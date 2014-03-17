@@ -1,5 +1,5 @@
 #!/bin/sh
-#by Jie Feng
+#Edited by Jie Feng
 ~/install/installVim.sh
 mkdir ~/generated
 
