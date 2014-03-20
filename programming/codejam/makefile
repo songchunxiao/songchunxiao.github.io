@@ -1,12 +1,15 @@
-target=lawnmower
+target= 32003p2
 
 all:
 	g++ -o $(target) -g $(target).cpp
 
-.PHONY: run
+.PHONY: run debug read
 
 run:
-	./${target} < in
+	./${target} < in | tee out
 
-gdb:
+debug:
 	gdb ${target}
+
+read:
+	vim -R ${target}.cpp

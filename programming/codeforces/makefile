@@ -1,4 +1,4 @@
-target=403B
+target= countRoutes
 
 all:
 	g++ -o $(target) -g $(target).cpp
