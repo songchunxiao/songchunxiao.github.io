@@ -9,6 +9,8 @@ bind '"\e[B": history-search-forward'
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
  
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.vim/bundle/gdbmgr/src
+
 # append to the history file, don't overwrite it
 shopt -s histappend
  

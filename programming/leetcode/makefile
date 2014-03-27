@@ -1,12 +1,18 @@
-target= wildcard-mathcing
+target= median-of-two-sorted-arrays
 
 all:
 	g++ -o $(target) -g $(target).cpp -w
 
-.PHONY: run
+.PHONY: run read debug
 
 run:
 	./${target}
 
+read:
+	vim -R ${target}.cpp
+
 debug:
 	gdb ${target}
+
+Debug:
+	clewn -va ${target}.cpp

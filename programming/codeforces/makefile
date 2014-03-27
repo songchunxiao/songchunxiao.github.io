@@ -1,12 +1,12 @@
-target= countRoutes
+target= 405E
 
 all:
 	g++ -o $(target) -g $(target).cpp
 
-.PHONY: run
+.PHONY: run debug
 
 run:
 	./${target} < in
 
-gdb:
+debug:
 	gdb ${target}

@@ -1,8 +1,10 @@
 #include <cmath>
+#include <list>
 #include <climits>
 #include <queue>
 #include <vector>
 #include <map>
+#include <set>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>   
@@ -58,6 +60,7 @@ inline void pisz(int n) { printf("%d\n",n); }
 #define TESTS wez(testow)while(testow--)
 #define whileZ int T; getI(T); while(T--)
 #define printA(a,L,R) FE(i,L,R) cout << a[i] << (i==R?'\n':' ')
+#define printM(a,n,m) F(i,0,n){ F(j,0,m) cout << a[i][j] << ' '; cout << endl;}
 #define printV(a) printA(a,0,a.size()-1)
 #define MAXN 10000
 #define sz(a) int((a).size()) 
@@ -72,7 +75,15 @@ typedef vector<vi> vvi;
 typedef pair<int,int> ii; 
 template<typename T,typename TT> ostream& operator<<(ostream &s,pair<T,TT> t) {return s<<"("<<t.first<<","<<t.second<<")";}
 template<typename T> ostream& operator<<(ostream &s,vector<T> t){F(i,0,SZ(t))s<<t[i]<<" ";return s; }
+int gcd(int a,int b){return a?gcd(b%a,a):b;}
+ll gcd(ll a,ll b){return a?gcd(b%a,a):b;}
+ll powmod(ll a,ll p,ll m){ll r=1;while(p){if(p&1)r=r*a%m;p>>=1;a=a*a%m;}return r;}
 const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};
+int findMax(vector<int> arr){
+    int ret = arr[0];
+    for (int i = 1; i < arr.size(); i++)
+        if (arr[i] > ret) ret = arr[i];
+}
 int main ( int argc, char *argv[] ) {
     /*{
     FILE* file = fopen(argv[1], "r");
@@ -86,6 +97,9 @@ int main ( int argc, char *argv[] ) {
         printf("Cases #%d: ", cases);
     }
     }*/
+    /*
+    Solution s = Solution();
+     */
     whileZ{
     }
     return EXIT_SUCCESS;
