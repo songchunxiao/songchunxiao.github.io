@@ -1,4 +1,4 @@
-target= construct-binary-tree-from-preorder-and-inorder-traversal
+target= longest-consecutive-sequence
 
 
 all:
