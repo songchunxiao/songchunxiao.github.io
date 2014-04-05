@@ -1,7 +1,7 @@
-target= 32003p2
+target= 32013p0
 
 all:
-	g++ -o $(target) -g $(target).cpp
+	g++ -o $(target) -g $(target).cpp -std=c++11
 
 .PHONY: run debug read
 

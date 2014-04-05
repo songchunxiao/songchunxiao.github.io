@@ -1,5 +1,5 @@
 #TopCoder ContestApplet Preferences File
-#Tue Jan 21 12:21:26 EST 2014
+#Sun Mar 02 14:45:16 EST 2014
 com.topcoder.client.contestApplet.common.LocalPreferences.menufont=Abyssinica SIL
 com.topcoder.client.contestApplet.common.LocalPreferences.menufontsize=10
 com.topcoder.client.contestApplet.common.LocalPreferences.commonclasspath=
@@ -141,7 +141,7 @@ com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxkeywordssty
 com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxdefaultstyle=0
 com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxhighlight=true
 com.topcoder.client.contestApplet.common.LocalPreferences.chalsrcsyntaxhighlight=true
-com.topcoder.client.contestApplet.LocalPreferences.connectionType=DIRECT
+com.topcoder.client.contestApplet.LocalPreferences.connectionType=TCHUNKED
 com.topcoder.client.contestApplet.panels.ChatPanel.generalback=-16777216
 com.topcoder.client.contestApplet.panels.ChatPanel.whispertoback=-65536
 com.topcoder.client.contestApplet.panels.ChatPanel.meback=-16777216
@@ -161,12 +161,12 @@ com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatQuestionFore=-16
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatSpeakerFore=-1
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatSpeakerBack=-16777216
 com.topcoder.client.contentApplet.panels.ChatPanel.moderatedChatQuestionBack=-16777216
-com.topcoder.jmaContestApplet.frames.codingframe.location=78\:24
-com.topcoder.jmaContestApplet.frames.codingframe.size=767\:876
+com.topcoder.jmaContestApplet.frames.codingframe.location=65\:24
+com.topcoder.jmaContestApplet.frames.codingframe.size=1535\:876
 com.topcoder.jmaContestApplet.frames.codingframe.dividerloc=398
-com.topcoder.jmaContestApplet.frames.sourceViewer.location=406\:39
-com.topcoder.jmaContestApplet.frames.sourceViewer.size=767\:861
-com.topcoder.jmaContestApplet.frames.sourceViewer.dividerloc=194
+com.topcoder.jmaContestApplet.frames.sourceViewer.location=65\:24
+com.topcoder.jmaContestApplet.frames.sourceViewer.size=1535\:876
+com.topcoder.jmaContestApplet.frames.sourceViewer.dividerloc=57
 ui.theme=Default
 fileeditor.config.dirName=./programming/topcoder/programs
 fileeditor.config.fileName=problem

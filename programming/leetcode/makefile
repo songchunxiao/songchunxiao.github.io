@@ -1,7 +1,8 @@
-target= median-of-two-sorted-arrays
+target= construct-binary-tree-from-preorder-and-inorder-traversal
+
 
 all:
-	g++ -o $(target) -g $(target).cpp -w
+	g++ -o $(target) -g $(target).cpp -w -std=c++11
 
 .PHONY: run read debug
 

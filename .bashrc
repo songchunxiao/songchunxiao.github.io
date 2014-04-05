@@ -158,3 +158,6 @@ alias bashe="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias chperl="chmod u+x *.pl"
 alias updatePersonWeb='ssh root@192.241.137.164 "cd /var/www/personalWeb; git pull;"'
+
+# added by Anaconda 1.9.1 installer
+export PATH="/home/john/anaconda/bin:$PATH"

@@ -76,15 +76,19 @@ const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};
 class Solution {
 public:
     int sqrt(int x) {
-        int r = x;
+        if (x == 0) return 0;
+        double sqrtx = x, lastsqrtx = x;
         while(true){
-
+            sqrtx = (x / lastsqrtx + lastsqrtx) / 2;
+            if (abs(sqrtx-lastsqrtx) < 0.01) break;
+            lastsqrtx = sqrtx;
         }
+        return sqrtx;
     }
 };
 int main ( int argc, char *argv[] ) {
     Solution s = Solution();
-    int x = 101;
+    int x = 100;
     cout << s.sqrt(x) << endl;
     return EXIT_SUCCESS;
 }

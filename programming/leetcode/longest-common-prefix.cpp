@@ -88,31 +88,18 @@ public:
         for (int i = 0;; i++){
             if (strs[0].length() <= i) break;
             char c = strs[0][i];
-            for (int k = 1; k < n; k++){
+            int k = 1;
+            for (k = 1; k < n; k++){
                 if (strs[k].length() <= i) break;
                 if (c != strs[k][i]) break;
             }
+            if (k != n) break;
             res.push_back(c);
         }
         return res;
     }
 };
 int main ( int argc, char *argv[] ) {
-    /*{
-    FILE* file = fopen(argv[1], "r");
-    int a, b;
-    while(fscanf(file, "%d,%d", &a, &b) != EOF){
-    }*/
-    /*
-    getI(T);
-    int T;
-    FE(cases,1,T){
-        printf("Cases #%d: ", cases);
-    }
-    }*/
-    /*
-    Solution s = Solution();
-     */
     vector<string> strs;
     strs.push_back("abc");
     strs.push_back("ab");
