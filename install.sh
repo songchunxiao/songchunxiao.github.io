@@ -49,3 +49,4 @@ sudo apt-get install php5-cgi
 git config --global core.excludesfile ~/.gitignore_global
 git config --global user.email "jokerfeng2010@gmail.com"
 git config --global user.name "Jie Feng"
+git config --global push.default simple
