@@ -1,6 +1,6 @@
 #!/bin/sh
 #Edited by Jie Feng
-~/install/installVim.sh
+#~/install/installVim.sh
 mkdir ~/generated
 
 #push.sh setup
