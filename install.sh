@@ -39,8 +39,8 @@ sudo apt-get install texlive-full evince
 sudo apt-get install -y grive-tools
 
 #Developing
-sudo apt-get install cmake clang bzr build-dep unity nux gnome-common \
-    libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0 libclang1-3.4 clang-3.4
+sudo apt-get install cmake  bzr build-dep unity nux gnome-common libibus-1.0-dev libgtest-dev google-mock libxtst-dev libmrss0 
+
 #Lamp
 sudo apt-get install tasksel rake
 sudo tasksel install lamp-server

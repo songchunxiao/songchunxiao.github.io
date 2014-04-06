@@ -2,8 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 #startup{{{
-cd ~
-git pull
 #}}}
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
