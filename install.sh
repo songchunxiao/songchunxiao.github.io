@@ -33,7 +33,7 @@ sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     ack
 
 #Tex/Latex installing
-sudo apt-get install texlive-full evince
+sudo apt-get install texlive-full evince texmaker
 
 #All yes
 sudo apt-get install -y grive-tools
