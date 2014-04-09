@@ -3,6 +3,7 @@
 # for examples
 #startup{{{
 #}}}
+#yes
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 # If not running interactively, don't do anything
