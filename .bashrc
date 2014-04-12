@@ -162,5 +162,7 @@ alias vimrc="vim ~/.vimrc"
 alias chperl="chmod u+x *.pl"
 alias updatePersonWeb='ssh root@192.241.137.164 "cd /var/www/personalWeb; git pull;"'
 
+alias findBinary='find . -name "*.o" -or -perm +111 -type f -not -name "*.py" -not -name "*.pl"  -not -name "*.sh"'
+alias rmBinary='find . -name "*.o" -or -perm +111 -type f -not -name "*.py" -not -name "*.pl"  -not -name "*.sh" | xargs rm'
 # added by Anaconda 1.9.1 installer
 export PATH="/home/john/anaconda/bin:$PATH"
