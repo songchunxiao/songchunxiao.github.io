@@ -1,21 +1,4 @@
-#!/bin/bash - 
-#===============================================================================
-#
-#          FILE: nemo.sh
-# 
-#         USAGE: ./nemo.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 04/14/2014 17:22
-#      REVISION:  ---
-#===============================================================================
+#!/bin/bash 
 
 if [ -z $1 ]
 then
