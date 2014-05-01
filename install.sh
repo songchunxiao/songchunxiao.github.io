@@ -30,7 +30,8 @@ sudo apt-get install vim vim-gnome tomboy exuberant-ctags\
     everpad tmux\
     libreadline6 libreadline6-dev\
     libncurses5-dev\
-    ack
+    ack xfig
+
 
 #Tex/Latex installing
 sudo apt-get install texlive-full evince texmaker
