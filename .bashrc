@@ -147,6 +147,9 @@ ensiteIt(){
 logoutUser(){
     sudo pkill -u $1
 }
+swapScreen(){
+    sudo xrandr --output LVDS1 --pos 1920x0 --output VGA1 --pos 0x0
+}
 alias ensite=ensiteIt
 shopt -s dotglob
 alias watchMemory='watch "ps aux | sort -nrk 4 | head -n 40"'
