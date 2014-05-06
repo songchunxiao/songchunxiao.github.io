@@ -1,6 +1,6 @@
 #TopCoder ContestApplet Preferences File
-#Sat Apr 12 11:59:33 EDT 2014
-com.topcoder.client.contestApplet.common.LocalPreferences.menufont=Abyssinica\ SIL
+#Mon May 05 01:57:15 EDT 2014
+com.topcoder.client.contestApplet.common.LocalPreferences.menufont=Abyssinica SIL
 com.topcoder.client.contestApplet.common.LocalPreferences.menufontsize=10
 com.topcoder.client.contestApplet.common.LocalPreferences.commonclasspath=
 com.topcoder.client.contestApplet.common.LocalPreferences.chatpanelback=-16777216
@@ -127,9 +127,9 @@ com.topcoder.client.contestApplet.common.LocalPreferences.summarypythonsyspassed
 com.topcoder.client.contestApplet.common.LocalPreferences.summarypythonsysfailed.color=-65485
 com.topcoder.client.contestApplet.common.LocalPreferences.summarypythonsysfailed.bold=false
 com.topcoder.client.contestApplet.common.LocalPreferences.summarypythonsysfailed.italic=true
-com.topcoder.client.contestApplet.common.LocalPreferences.usertablefont=Abyssinica\ SIL
+com.topcoder.client.contestApplet.common.LocalPreferences.usertablefont=Abyssinica SIL
 com.topcoder.client.contestApplet.common.LocalPreferences.usertablefontsize=12
-com.topcoder.client.contestApplet.common.LocalPreferences.summaryfont=Abyssinica\ SIL
+com.topcoder.client.contestApplet.common.LocalPreferences.summaryfont=Abyssinica SIL
 com.topcoder.client.contestApplet.common.LocalPreferences.summaryfontsize=12
 com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxkeywords=-6710785
 com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxliterals=-65281
@@ -142,6 +142,11 @@ com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxdefaultstyl
 com.topcoder.client.contestApplet.common.LocalPreferences.edstdsyntaxhighlight=true
 com.topcoder.client.contestApplet.common.LocalPreferences.chalsrcsyntaxhighlight=true
 com.topcoder.client.contestApplet.LocalPreferences.connectionType=TCHUNKED
+com.topcoder.client.contestApplet.LocalPreferences.connection.type=No Proxy
+com.topcoder.client.contestApplet.LocalPreferences.connection.host=
+com.topcoder.client.contestApplet.LocalPreferences.connection.port=
+com.topcoder.client.contestApplet.LocalPreferences.connection.username=
+com.topcoder.client.contestApplet.LocalPreferences.connection.password=
 com.topcoder.client.contestApplet.panels.ChatPanel.generalback=-16777216
 com.topcoder.client.contestApplet.panels.ChatPanel.whispertoback=-65536
 com.topcoder.client.contestApplet.panels.ChatPanel.meback=-16777216
@@ -170,8 +175,8 @@ com.topcoder.jmaContestApplet.frames.sourceViewer.dividerloc=57
 ui.theme=Default
 fileeditor.config.dirName=./algorithm_coding/topcoder/programs
 fileeditor.config.fileName=problem
-fileeditor.config.beginCut=//\ BEGIN\ CUT\ HERE
-fileeditor.config.endCut=//\ END\ CUT\ HERE
+fileeditor.config.beginCut=// BEGIN CUT HERE
+fileeditor.config.endCut=// END CUT HERE
 fileeditor.config.probdescfileextnsion=txt
 fileeditor.config.signaturefilename=
 fileeditor.config.lineComments=true
@@ -180,15 +185,15 @@ fileeditor.config.provideBreaks=false
 fileeditor.config.probdescfilewrite=false
 fileeditor.config.breakAt=60
 fileeditor.config.htmldesc=false
-fileeditor.config.backup=true
-fileeditor.config.javatemplate=$BEGINCUT$\n$PROBLEMDESC$\n$ENDCUT$\nimport\ java.util.*;\npublic\ class\ $CLASSNAME$\ {\n\tpublic\ $RC$\ $METHODNAME$($METHODPARMS$)\ {\n\t\t\n\t}\n\tpublic\ static\ void\ main(String[]\ args)\ {\n\t\t$CLASSNAME$\ temp\ \=\ new\ $CLASSNAME$();\n\t\tSystem.out.println(temp.$METHODNAME$($METHODPARMS$));\n\t}\n}
-fileeditor.config.cpptemplate=$PROBLEMDESC$\n\#include\ <sstream>\n/*\n*/\n\#define\ debuging\n\#ifdef\ debuging\n\#define\ FIN\ \ {freopen("new.in"\ ,\ "r"\ ,\ stdin)\ ;}\n\#define\ FOUT\ {freopen("new.out"\ ,\ "w"\ ,\ stdout)\ ;}\n\#define\ OUT(x)\ \ {cout<<\ \#x\ <<\ "\ \ \:\ "\ <<\ x\ <<endl\ ;}\n\#define\ ERR(x)\ \ {cout<<"\#error\:\ "<<\ x\ ;\ while(1)\ ;}\n\#endif\n$ENDCUT$\n\#ifndef\ debuging\n\#define\ FIN\ \ ;\n\#define\ FOUT\ ;\n\#define\ OUT(x)\ \ ;\n\#define\ ERR(x)\ \ ;\n\#endif\n\#include\ <cstdio>\n\#include\ <iostream>\n\#include\ <cstring>\n\#include\ <algorithm>\n\#include\ <cmath>\n\#include\ <vector>\nusing\ namespace\ std\ ;\n\#define\ bit(x,i)\ (x&(1<<i))\n\#define\ max(a,b)\ (a<b?b\:a)\n\#define\ abs(x)\ (x<0?-x\:x)\n\#define\ IN(i,l,r)\ (l<i&&i<r)\n\#define\ LINR(i,l,r)\ (l<\=i&&i<\=r)\n\#define\ LIN(i,l,r)\ (l<\=i&&i<r)\n\#define\ INR(i,l,r)\ (l<i&&i<r)\n\#define\ F(i,L,R)\ for\ (int\ i\ \=\ L;\ i\ <\ R;\ i++)\n\#define\ FE(i,L,R)\ for\ (int\ i\ \=\ L;\ i\ <\=\ R;\ i++)\n\#define\ FF(i,L,R)\ for\ (int\ i\ \=\ L;\ i\ >\ R;\ i--)\n\#define\ FFE(i,L,R)\ for\ (int\ i\ \=\ L;\ i\ >\=\ R;\ i--)\n\#define\ char2Int(c)\ (c-'0')\n\#define\ lastEle(vec)\ vec[vec.size()-1]\n\#define\ hBit(msb,n)\ asm("bsrl\ %1,%0"\ \:\ "\=r"(msb)\ \:\ "r"(n))\n\#define\ clr(a,x)\ memset(a,x,sizeof(x))\n\#define\ ll\ long\ long\n\#define\ ui\ unsigned\ int\n\#define\ us\ unsigned\ short\nconst\ int\ maxint\ \=\ -1u>>2\ ;\nconst\ double\ eps\ \=\ 1e-6\ ;\ \nclass\ $CLASSNAME$\n{\n\ \ \ \ public\:\n\ \ \ \ \ \ \ \ $RC$\ $METHODNAME$($METHODPARMS$)\n\ \ \ \ \ \ \ \ {\n\n\n\ \ \ \ \ \ \ \ \ \ \ \ return\ $RC$()\ ;\n\ \ \ \ \ \ \ \ }\n\n\ \ \ \ \ \ \ \ $TESTCODE$\n};\n$BEGINCUT$\nint\ main(){\n\ \ \ \ $CLASSNAME$\ ___test;\n\ \ \ \ ___test.run_test(-1);\n\ \ \ \ return\ 0;\n}\n$ENDCUT$\n
-fileeditor.config.csharptemplate=using\ System;\r\nusing\ System.Collections;\r\npublic\ class\ $CLASSNAME$\ {\r\n\tpublic\ $RC$\ $METHODNAME$($METHODPARMS$)\ {\r\n\t\t$CARETPOSITION$\r\n\t}\r\n}
+fileeditor.config.backup=false
+fileeditor.config.javatemplate=$BEGINCUT$\n$PROBLEMDESC$\n$ENDCUT$\nimport java.util.*;\npublic class $CLASSNAME$ {\n\tpublic $RC$ $METHODNAME$($METHODPARMS$) {\n\t\t\n\t}\n\tpublic static void main(String[] args) {\n\t\t$CLASSNAME$ temp \= new $CLASSNAME$();\n\t\tSystem.out.println(temp.$METHODNAME$($METHODPARMS$));\n\t}\n}
+fileeditor.config.cpptemplate=$PROBLEMDESC$\n\#include <sstream>\n/*\n*/\n\#define debuging\n\#ifdef debuging\n\#define FIN  {freopen("new.in" , "r" , stdin) ;}\n\#define FOUT {freopen("new.out" , "w" , stdout) ;}\n\#define OUT(x)  {cout<< \#x << "  \: " << x <<endl ;}\n\#define ERR(x)  {cout<<"\#error\: "<< x ; while(1) ;}\n\#endif\n$ENDCUT$\n\#ifndef debuging\n\#define FIN  ;\n\#define FOUT ;\n\#define OUT(x)  ;\n\#define ERR(x)  ;\n\#endif\n\#include <cstdio>\n\#include <iostream>\n\#include <cstring>\n\#include <algorithm>\n\#include <cmath>\n\#include <vector>\nusing namespace std ;\n\#define bit(x,i) (x&(1<<i))\n\#define max(a,b) (a<b?b\:a)\n\#define abs(x) (x<0?-x\:x)\n\#define IN(i,l,r) (l<i&&i<r)\n\#define LINR(i,l,r) (l<\=i&&i<\=r)\n\#define LIN(i,l,r) (l<\=i&&i<r)\n\#define INR(i,l,r) (l<i&&i<r)\n\#define F(i,L,R) for (int i \= L; i < R; i++)\n\#define FE(i,L,R) for (int i \= L; i <\= R; i++)\n\#define FF(i,L,R) for (int i \= L; i > R; i--)\n\#define FFE(i,L,R) for (int i \= L; i >\= R; i--)\n\#define char2Int(c) (c-'0')\n\#define lastEle(vec) vec[vec.size()-1]\n\#define hBit(msb,n) asm("bsrl %1,%0" \: "\=r"(msb) \: "r"(n))\n\#define clr(a,x) memset(a,x,sizeof(x))\n\#define ll long long\n\#define ui unsigned int\n\#define us unsigned short\nconst int maxint \= -1u>>2 ;\nconst double eps \= 1e-6 ; \nclass $CLASSNAME$\n{\n    public\:\n        $RC$ $METHODNAME$($METHODPARMS$)\n        {\n\n\n            return $RC$() ;\n        }\n\n        $TESTCODE$\n};\n$BEGINCUT$\nint main(){\n    $CLASSNAME$ ___test;\n    ___test.run_test(-1);\n    return 0;\n}\n$ENDCUT$\n
+fileeditor.config.csharptemplate=using System;\r\nusing System.Collections;\r\npublic class $CLASSNAME$ {\r\n\tpublic $RC$ $METHODNAME$($METHODPARMS$) {\r\n\t\t$CARETPOSITION$\r\n\t}\r\n}
 fileeditor.config.javaextension=java
 fileeditor.config.cppextension=cpp
 fileeditor.config.csharpextension=cs
 codeprocessor.CodeProcessorcodeprocessor.config.pluginentrypoint=fileedit.EntryPoint
-codeprocessor.CodeProcessorcodeprocessor.config.codeprocessor#0=tangentz.TZTester
+codeprocessor.CodeProcessorcodeprocessor.config.codeprocessor\#0=tangentz.TZTester
 codeprocessor.CodeProcessorcodeprocessor.config.numofcodeprocessors=1
 editor.defaultname=CodeProcessor
 editor.1.name=FileEdit
