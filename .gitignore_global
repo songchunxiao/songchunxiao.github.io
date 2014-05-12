@@ -136,4 +136,5 @@ temp
 ubuntuDev/
 upp/
 workspace/
+contestapplet.conf
 !./Desktop/ContestAppletProd.jnlp
