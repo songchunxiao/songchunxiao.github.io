@@ -150,7 +150,7 @@ logoutUser(){
 swapScreen(){
     sudo xrandr --output LVDS1 --pos 1920x0 --output VGA1 --pos 0x0
 }
-switchInputSate(){
+switchInput(){
     action=`xinput list-props $1 | grep "Device Enabled" | sed 's/.*:\s*([0-9]*)/\1/' -r`
     if (( $action == "0" ))
     then 
@@ -166,8 +166,8 @@ alias watchCPU='watch "ps aux | sort -nrk 3 | head -n 40"'
 alias replaceUnity='sudo DISPLAY=:0 unity --replace'
 alias logOut="logoutUser john"
 alias open="gnome-open"
-alias switchKeyboard="switchInputSate 14"
-alias switchMouse="switchInputSate 15"
+alias switchKeyboard="switchInput 14"
+alias switchMouse="switchInput 15"
 alias vimall="gvim -p *.h *.cc makefile"
 alias sourcenow="source ~/.bashrc"
 alias bashe="vim ~/.bashrc"

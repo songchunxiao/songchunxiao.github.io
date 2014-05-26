@@ -137,4 +137,5 @@ ubuntuDev/
 upp/
 workspace/
 contestapplet.conf
-!./Desktop/ContestAppletProd.jnlp
+contestapplet.conf.bak
+.xinput*
